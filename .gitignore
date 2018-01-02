@@ -1,6 +1,11 @@
 # Eclise files
 .settings
 .settings/*
+.project
+.classpath
+
+#Custom
+*xml.out
 
 # Compiled class file
 *.class

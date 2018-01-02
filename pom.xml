@@ -182,8 +182,6 @@
 		<module>parse-utils</module>
 		<module>rest-utils</module>
 		<module>bucket-utils</module>
-		<module>opa-utils</module>
-		<module>yaml-utils</module>
 		<module>tool-utils</module>
 		<module>oracle-utils</module>
 		<module>jee-utils</module>
