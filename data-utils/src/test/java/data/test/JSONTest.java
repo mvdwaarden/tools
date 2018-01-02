@@ -435,12 +435,12 @@ public class JSONTest {
 
 	@Test
 	public void testXmlToJSON() {
-		JSONObject jsonObj = JSONUtil.getInstance()
-				.parseXML(DataUtil.getInstance().readFromFile(ConfigurationUtil.getInstance().getTestResourcesPath()
-						+ DataUtil.PATH_SEPARATOR + "xml" + DataUtil.PATH_SEPARATOR + "test2.xml"));
-
-		String jsonStr = JSONUtil.getInstance().writeJSON(jsonObj);
-
-		DataUtil.getInstance().writeToFile("d:/tmp/void/file/test2.json", jsonStr);
+//		JSONObject jsonObj = JSONUtil.getInstance()
+//				.parseXML(DataUtil.getInstance().readFromFile(ConfigurationUtil.getInstance().getTestResourcesPath()
+//						+ DataUtil.PATH_SEPARATOR + "xml" + DataUtil.PATH_SEPARATOR + "test2.xml"));
+//
+//		String jsonStr = JSONUtil.getInstance().writeJSON(jsonObj);
+//
+//		DataUtil.getInstance().writeToFile("d:/tmp/void/file/test2.json", jsonStr);
 	}
 }
