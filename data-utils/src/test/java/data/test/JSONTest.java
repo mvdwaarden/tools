@@ -7,15 +7,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.ObjectReader;
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.alibaba.fastjson.JSON;
 
 import csv.CSVData;
 import data.ConfigurationUtil;
@@ -33,7 +28,6 @@ import json.JavaWalkerCallbackWriter;
 import json.Path;
 import json.Path.Option;
 import json.XMLWriter;
-import net.minidev.json.parser.ParseException;
 
 public class JSONTest {
 
@@ -340,7 +334,7 @@ public class JSONTest {
 				props.store(new FileOutputStream("d:/tmp/test.props"), "tada");
 				o1 = null;
 			}
-		}), new BenchMark(PARSER_SMART, "smart parser", false, new BenchMarkTest() {
+		}), /*new BenchMark(PARSER_SMART, "smart parser", false, new BenchMarkTest() {
 			void doBenchmark(String file, String json) {
 				@SuppressWarnings("deprecation")
 				net.minidev.json.parser.JSONParser smartParser = new net.minidev.json.parser.JSONParser();
@@ -359,7 +353,7 @@ public class JSONTest {
 				o1 = JSON.parseObject(json);
 				o1 = null;
 			}
-		}), new BenchMark(PARSER_JACKSON, "this", false, new BenchMarkTest() {
+		}) , new BenchMark(PARSER_JACKSON, "this", false, new BenchMarkTest() {
 			@Override
 			void doBenchmark(String file, String json) throws IOException {
 				ObjectReader jacksonParser = new ObjectMapper().reader(Map.class);
@@ -367,7 +361,7 @@ public class JSONTest {
 				o1 = jacksonParser.readValue(json);
 				o1 = null;
 			}
-		}), };
+		}),*/ };
 
 		CSVData testresults = new CSVData();
 		List<String> cols = new ArrayList<>();
