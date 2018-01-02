@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"	
+	xmlns:xml="http://www.w3.org/XML/1998/namespace">
+	<xsd:import	namespace="http://servicespecifications.belastingdienst.nl/gegevens/verstrekkingenloketservice_v0.1/raadplegenVarKrGegevensRequest"
+				schemaLocation="request.xsd">
+	</xsd:import>
+	<xsd:import	namespace="http://servicespecifications.belastingdienst.nl/gegevens/verstrekkingenloketservice_v0.1/raadplegenVarKrGegevensResponse"
+				schemaLocation="response.xsd">
+	</xsd:import>
+</xsd:schema>

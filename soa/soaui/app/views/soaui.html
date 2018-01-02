@@ -1,0 +1,94 @@
+<md-tabs md-dynamic-heigth md-border-bottom md-align-tabs="top" layout-fill>           
+    <md-tab id="query" label="Query">
+        <md-content class="md-padding" >
+            <div layout="column" flex>    
+               <fieldset>
+                    <legend>Query Parameters</legend>
+                    <div layout="row">
+                        <md-input-container>
+                            <label>Query</label>
+                            <md-select ng-model="query" >    
+                                <md-option value="{{c}}" ng-repeat="c in queries">{{c}}</md-option>
+                            </md-select>        
+                        </md-input-container>            
+                    </div>                   
+                    <div>  
+                        <md-button class="md-raised" ng-click="get_queries()" ng-if="configs.length <= 0">Get Configurations {{config}}</md-button>
+                        <md-button class="md-raised" ng-click="do_query()" >Execute {{query}}</md-button>                        
+                        <md-button class="md-raised" ng-click="do_queryInit()" >Initialize</md-button>    
+                    </div>
+                    <div>
+                         <md-button class="md-primary" ng-href="{{result_url}}" ng-repeat="result_url in result_urls" target="_blank">Result [{{result_url}}]</md-button>
+                    </div>    
+                    <div class="d3_svg_result">
+                        
+                    </div>
+                </fieldset>
+            </div>
+        </md-content>
+    </md-tab>
+     <md-tab id="start" label="Execute">
+        <md-content class="md-padding" >                  
+            <div layout="column" flex>                
+                <fieldset>
+                    <legend>Monitoring</legend>
+                    <div layout="row">
+                        <md-input-container flex="40">
+                            <label>Function</label> <input ng-model="func" />
+                        </md-input-container>   
+                        <md-input-container>
+                            <label>Configuration</label>
+                            <md-select ng-model="config" >    
+                                <md-option value="{{c}}" ng-repeat="c in configs">{{c}}</md-option>
+                            </md-select>        
+                        </md-input-container>            
+                    </div>
+                    <div layout="row">
+                        <md-input-container>
+                            <label>Upload</label> <input type="file" ng-model=" file"/>                        
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-button class="md-raised" ng-click="get_list()" ng-if="configs.length <= 0">Get Configurations {{config}}</md-button>
+                        <md-button class="md-raised" ng-click="do_function()" >Execute {{func}}</md-button>
+                        <md-button class="md-raised" ng-click="get_status()" >Status {{handle}} </md-button>
+                        <md-button class="md-raised" ng-click="do_upload()" >Upload {{file}}</md-button>
+                    </div>                      
+                </fieldset>
+
+            </div>
+        </md-content>                  
+    </md-tab>
+    <md-tab id="logging" label="Logging">
+        <md-content class="md-padding" >
+            <div layout="column" flex>    
+                <fieldset>
+                    <div layout="row">    
+                        <md-input-container>
+                            <label>Handle</label>
+                            <md-select ng-model="handle">    
+                                <md-option value="{{h.handle}}" ng-repeat="h in handles">{{h.handle}}-{{h.config}}</md-option>
+                            </md-select>        
+                        </md-input-container>                   
+                        <md-input-container>  
+                            <md-switch ng-model="watch" aria-label="Watch" ng-change="do_watch()">
+                                Watch: {{ watch}}
+                            </md-switch>                        
+                        </md-input-container>                    
+                    </div>                    
+                </fieldset>
+                <fieldset>
+                    <legend>Action</legend>  
+                    <div layout="row" layout-sm="column">
+                        <md-subheader>Log</md-subheader>
+                        <md-progress-circular md-mode="indeterminate" ng-if="watch"></md-progress-circular>
+                    </div>
+                    <md-list>
+                        <md-list-item ng-repeat="log in status.data.log">{{log}}</md-list-item>                
+                    </md-list>                
+                </fieldset> 
+            </div>
+        </md-content>
+    </md-tab>
+    <md-tab id="fix" label=""></md-tab>
+</md-tabs>

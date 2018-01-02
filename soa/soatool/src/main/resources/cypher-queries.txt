@@ -1,0 +1,71 @@
+
+match (c:Composite) - [*0..5] -> (n) where c.description="Intake" return c,n;
+
+#ophalen complete composite
+match (s:Service) --> (c:Composite) - [*1..4] -> (n) where c.description="DocumentGeneratorWS" return s,c,n;
+
+#ophalen van descision services
+match (s) --> (t) where t.implementationType="DECISION" and head(labels(s))="Composite" return head(labels(s)),s.name,t.description ;
+
+#ophalen attribuut ("binding")
+MATCH (n) WHERE has(n.binding) RETURN DISTINCT "node" as element, n.binding AS binding  UNION ALL MATCH ()-[r]-() WHERE has(r.binding) RETURN DISTINCT "relationship" AS element, r.binding AS binding 
+
+#ophalen JCA transports
+match (n) --> (t) where t.transport="http://www.bea.com/wli/sb/transports/jca" return n,t;
+
+#ophalen JCA business services
+match (n:BusinessService) -[*1..4]-> (t) where t.transport="http://www.bea.com/wli/sb/transports/jca" return n.name;
+
+#ophalen JCA proxy services
+match (n:ProxyService) -[*1..4]-> (t) where t.transport="http://www.bea.com/wli/sb/transports/jca" return n.name;
+
+#ophalen waar en taak naar verwijst
+match (s:Task) -[*1..2]-> (n) where s.description="Start VTA" return s,n;
+
+#bepalen cycles
+match p = n-[*]->n where length(p) > 2 return p;
+
+#ophalen reference to service
+match (r:Reference) -[*1..3] - (s:Service),(r:Reference) --> (w:WSDL), (s:Service) --> (w:WSDL) return w,s,r;
+
+
+#ophalen sca overview
+match (s:Service) --> (w:WSDL)<-- (r:Reference),(s:Service)--> (c:Composite) -[*]-> (n) --> (r:Reference),(w:WSDL) --> (j:JCA) -- (ja:JCAAdapter) return c,s,r,w,n,j,ja;
+
+#matchen van gelijksoortige WSDL's (met dezelfde poort types)
+match p = (w:WSDL) --> (i:Interface),p2 = (w2:WSDL) --> (i2:Interface) where i.name = i2.name and w.name <> w2.name and length(nodes(p)) = length(nodes(p2)) return p;
+
+#matchen cyclische structuren in XSD's
+$match (n:XSDElement) -[r*]-> (n:XSDElement) return r,n;
+
+
+vanuit track:
+http://xmlns.oracle.com/pcbpel/adapter/jms/ApplicationBeoordelen/Track/startAfhandelen/startAfhandelen
+vanuit beoordelen:
+http://xmlns.oracle.com/pcbpel/adapter/jms/ApplicationBeoordelen/Beoordelen/startAfhandelen/startAfhandelen
+afhandelen: 
+http://xmlns.oracle.com/pcbpel/adapter/jms/ApplicationAfhandelen/Afhandelen/startAfhandelen/startAfhandelen
+
+
+#ophalen SQL Queries
+match  (p:ProxyService)-[*]-> (bs:BusinessService) --> (b:Binding), (w:WSDL) --> b,w --> (j:JCA) --> (ja:JCAAdapter) where p.description ="RdrHrPersoonRS" return distinct p,bs,w,b,j,ja;
+
+match  (p:ProxyService)-[*]-> (bs:BusinessService) --> (b:Binding), (w:WSDL) --> b,w --> (j:JCA) --> (ja:JCAAdapter) where p.description ="RdrHrPersoonRS" return distinct p.name,bs.name,w.name,b.name,j.name,ja.SqlString;
+
+#ophalen report acties
+match (p:ProxyService) --> (c:Context) --> (r:Report) --> (l:LoggingKey) return p,c,r,l;
+match (p:ProxyService) --> (c:Context) --> (r:Report) --> (l:LoggingKey) return p.description,c.description,l.variable,l.xpath;
+
+#ophalen CBS relaties
+match (p:ProxyService) --> n -->(ps:ProxyService) where p.description=~".*CBS" return p,ps,n;
+
+match (p:ProxyService) -[e*]-> (b:BusinessService)  where p.description in ["MaatschappelijkeActiviteitRS","NatuurlijkPersoonServiceReqRS","DocumentenGeneratorRS","BeschikkingEcRS","JustitieelDocumentatieZaakVanPersoonReqRS","ZmsPrintRS","ZmsGeldzakenRS","ErvaringsdataRS"] or b.description in ["ZmsGenZaakResACS"] return p,e,b
+
+
+#Relaties tussen proxies leggen
+match (from:ProxyService) -[*0..3]-> (to:ProxyService) where from.id <> to.id   create (from) -[:CALLS]-> (to)
+match (from:ProxyService) -[*0..3]-> (to:BusinessService) where from.id <> to.id   create (from) -[:CALLS]-> (to)
+
+#Dubbele relaties verwijderen
+match (n:ProxyService)-[r:CALLS]->(m:ProxyService) with n, m, collect(r)[1..] as rels foreach (r in rels | delete r) 
+

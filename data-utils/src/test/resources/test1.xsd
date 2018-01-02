@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://target.nl" xmlns:target="http://target.nl">
+	<complexType name="Type1">
+		<sequence>
+			<element name="string1" type="xsd:string" />
+			<element name="string2" type="xsd:string" />
+			<element name="int1" type="xsd:integer" />
+			<element name="int2" type="xsd:integer" />
+		</sequence>
+	</complexType>
+	<element name="el1Typed" type="target:Type1" />
+	<element name="el2Anonymous">
+		<complexType>
+			<sequence>
+				<element name="string1" type="xsd:string" />
+				<element name="string2" type="xsd:string" />
+				<element name="int1" type="xsd:integer" />
+				<element name="int2" type="xsd:integer" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="el3TypedWithSimpleTypes">
+		<complexType>
+			<sequence>
+				<element name="string1" type="target:String" />
+				<element name="string2" type="target:String" />
+				<element name="int1" type="target:Integer" />
+				<element name="int2" type="target:Integer" />
+			</sequence>
+		</complexType>
+	</element>	
+	<simpleType name="String">
+		<restriction base="xsd:string">
+			<maxLength value="20" />
+		</restriction>
+	</simpleType>
+	<simpleType name="Integer">
+		<restriction base="xsd:integer">
+
+		</restriction>
+	</simpleType>
+</schema>

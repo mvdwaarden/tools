@@ -1,0 +1,28 @@
+TRM;CANONIEK;
+BetrokkenPersonen.Persoon.Relaties.Relatie;;
+BetrokkenPersoon.Persoon.NatuurlijkPersoon;BetrokkenPersoon.Persoon.NatuurlijkPersoon;Met rol
+BetrokkenPersoon.Persoon.Nietnatuurlijkpersoon;BetrokkenPersoon.Persoon.Nietnatuurlijkpersoon;Met rol
+Geboorte;Geboorte;
+Broninformatie;Bronbevraging;
+Bronvraag;;
+DeviatieType;;
+Functievervulling;functieVervulling;
+Gebeurtenis;Zaak.Gebeurtenis;
+Levensloopmoment;Zaak;
+MasterSet;;
+OnderzoekssubjectScore;;
+PrimairPersoon.Persoon.Natuurlijkpersoon;;
+PrimairPersoon.Persoon.Nietnatuurlijkpersoon;;
+PrimairPersoon;BetrokkenPersoon;Met rol
+Relatie;Relatie;
+Simulatie;;
+Toets;;
+Toetsresultaat;;
+ToetsresultaatIndicator;;
+Toetsresultaatprofiel;;
+Toetsresultaatverschijnsel;;
+Antecedenten;Waarnemingen;
+FinancieelAntecedent;Waarnemingverbijzondering;Welke tabel
+CrimineelAntecedent;StrafrechterlijkAntecedent;
+ WetsartikelCodes;Wetsartikelcode;
+JustitieelDocumentatieZaak;JustitieelDocumentatieZaak;(typo in specs)

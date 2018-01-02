@@ -1,0 +1,7 @@
+transitions elevator
+ button2 floor1 AND button1 floor2 AND OR: 
+	stop -> start
+ button1 floor1 AND button2 floor2 AND OR: 
+	start -> stop
+
+	

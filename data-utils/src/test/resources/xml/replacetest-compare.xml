@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<con:testStep type="request" id="7e689aba-57e2-45ef-bd1f-e12e2793bea5" name="verzendAanvraagNP - JSB">
+	<con:settings/>
+	<con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<con:interface>AanvraagNpAPIBinding</con:interface>
+		<con:operation>verzendAanvraagNP</con:operation>
+		<con:request name="verzendAanvraagNP - JSB" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="1234">
+			<con:settings>
+				<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+			</con:settings>
+			<con:encoding>UTF-8</con:encoding>
+			<con:endpoint>https://covogtest.minjus.gemnet.nl/httpstest/webservices/AanvraagNpAPI</con:endpoint>
+			<con:request>
+				<![CDATA[hello]]>
+			</con:request>
+			<con:assertion type="SOAP Response" id="4321" name="SOAP Response"/>
+			<con:credentials>
+				<con:authType>No Authorization</con:authType>
+			</con:credentials>
+			<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+			<con:jmsPropertyConfig/>
+			<con:wsaConfig mustUnderstand="NONE" version="200508" action=""/>
+			<con:wsrmConfig version="1.2"/>
+		</con:request>
+	</con:config>
+</con:testStep>

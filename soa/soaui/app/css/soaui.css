@@ -1,0 +1,12 @@
+.soaui md-input-container {
+  margin-right: 10px; }
+div.flex-xs {
+  min-height: 40px; }
+.soaui div {
+  clear: both; }
+.soaui md-checkbox {
+  float: left; }
+
+fieldset.standard {
+  border-style: solid;
+  border-width: 1px; }

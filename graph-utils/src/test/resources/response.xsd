@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://servicespecifications.belastingdienst.nl/gegevens/verstrekkingenloketservice_v0.1/raadplegenVarKrGegevensResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://servicespecifications.belastingdienst.nl/gegevens/verstrekkingenloketservice_v0.1/raadplegenVarKrGegevensResponse" version="0.2">
+	<xsd:element name="response" type="responseType"/>
+	<xsd:element name="omschrijving">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="200"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="adressoortcode">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="4"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="raadplegenVarKrGegevensResponse" type="raadplegenVarKrGegevensResponseType"/>
+	<xsd:element name="huisnummerToevoeging">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="12"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="landnaam">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="60"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="huisnummer">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="5"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="postcode">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="6"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="locatie">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="40"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="geboortedatum">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="10"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="woonplaats">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="24"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="soort">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="20"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="finummer">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="9"/>
+				<xsd:minLength value="1"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="buitenlandsAdresRegel1">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="35"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="landcode">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="4"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="buitenlandsAdresRegel2">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="38"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="terAttentieVanNaam">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="36"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="naam" type="naamType"/>
+	<xsd:element name="straatnaam">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="24"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="locatiesoort">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="2"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="fout" type="foutType"/>
+	<xsd:element name="vipIndicatie">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="1"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="code">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="4"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="samengesteldeNaam">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="108"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="voorletters">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="20"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="postbusnummer">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="5"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="aangifteAdres" type="aangifteAdresType"/>
+	<xsd:element name="achternaam">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="108"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="nationaliteit1">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="4"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="tussenvoegsels">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="10"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="nationaliteit2">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="4"/>
+				<xsd:minLength value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:complexType name="responseType">
+		<xsd:sequence>
+			<xsd:element ref="raadplegenVarKrGegevensResponse"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="raadplegenVarKrGegevensResponseType">
+		<xsd:sequence>
+			<xsd:element ref="finummer" minOccurs="1" maxOccurs="1"/>
+			<xsd:element ref="naam" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="geboortedatum" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="nationaliteit1" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="nationaliteit2" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="vipIndicatie" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="aangifteAdres" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="fout" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="naamType">
+		<xsd:sequence>
+			<xsd:element ref="voorletters" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="tussenvoegsels" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="achternaam" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="samengesteldeNaam" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="foutType">
+		<xsd:sequence>
+			<xsd:element ref="soort" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="code" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="omschrijving" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="aangifteAdresType">
+		<xsd:sequence>
+			<xsd:element ref="terAttentieVanNaam" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="straatnaam" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="postbusnummer" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="huisnummer" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="huisnummerToevoeging" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="woonplaats" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="postcode" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="locatie" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="locatiesoort" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="buitenlandsAdresRegel1" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="buitenlandsAdresRegel2" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="landnaam" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="landcode" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="adressoortcode" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

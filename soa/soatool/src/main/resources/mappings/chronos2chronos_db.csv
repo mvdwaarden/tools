@@ -1,0 +1,18 @@
+CHRONOS;CHRONOS_DB;;
+NatuurlijkePersonen;zms_natuurlijke_personen;;
+NietNatuurlijkePersonen;zms_niet_natuurlijke_personen;;
+Informatieverzoeken;zms_informatieverzoeken;;
+Waarnemingen;zms_waarnemingen;;
+Functievervulling;zms_functievervullingen;;
+Gebeurtenis;zms_gebeurtenissen;;
+Zaken;zms_zaken;;
+Personen;zms_personen;;
+Relaties;zms_relaties;;
+Waarnemingsregels;zms_waarnemingsregels;;
+Toets;zms_toetsen;;
+Analysedeviatie;zms_analysedeviaties;;
+Toetsresultaat;zms_toetsresultaten;;
+ToetsresultaatProfiel;zms_toetsrst_profielen;?;Veld of tabel
+ToetsresultaatVerschijnsel;zms_toetsrst_verschijnsln;;
+ToetsresultaatIndicator;zms_toetsrst_indicatoren;;
+OnderzoeksubjectScore;zms_onderzoekssbjt_scores;;

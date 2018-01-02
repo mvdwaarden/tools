@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<con:testStep type="request" id="7e689aba-57e2-45ef-bd1f-e12e2793bea5" name="verzendAanvraagNP - JSB" xmlns:con="test">
+	<con:settings/>
+	<con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<!-- commentaar over
+		meerdere regels
+		-->
+		<con:interface>AanvraagNpAPIBinding</con:interface>
+		<con:operation>verzendAanvraagNP</con:operation>
+		<con:request name="verzendAanvraagNP - JSB${ctx/loop.idx}" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="${ctx/request.uuid}">
+			<con:settings>
+				<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+			</con:settings>
+			<con:encoding>UTF-8</con:encoding>
+			<con:endpoint>https://covogtest.minjus.gemnet.nl/httpstest/webservices/AanvraagNpAPI</con:endpoint>
+			<con:request>
+				<![CDATA[${ctx/request.message}]]>
+			</con:request>
+			<con:assertion type="SOAP Response" id="${ctx/response.uuid}" name="SOAP Response"/>
+			<con:credentials>
+				<con:authType>No Authorization</con:authType>
+			</con:credentials>
+			<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+			<con:jmsPropertyConfig/>
+			<con:wsaConfig mustUnderstand="NONE" version="200508" action="${ctx/wsa.action}"/>
+			<con:wsrmConfig version="1.2"/>
+		</con:request>
+	</con:config>
+</con:testStep>

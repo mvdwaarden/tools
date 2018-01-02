@@ -1,0 +1,12 @@
+{
+	geocoded_waypoints : [{
+			geocoder_status : "OK",
+			place_id : "ChIJCSF8lBZEwokRhngABHRcdoI",
+			types : ["sublocality_level_1", "sublocality", "political"]
+		}, {
+			geocoder_status : "OK",
+			place_id : "ChIJK1kKR2lDwokRBXtcbIvRCUE",
+			types : ["sublocality_level_1", "sublocality", "political"]
+		}
+	]
+}

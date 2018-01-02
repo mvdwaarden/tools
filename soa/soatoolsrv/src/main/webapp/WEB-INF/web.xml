@@ -1,0 +1,30 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+                        http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<filter>
+		<filter-name>cors-filter</filter-name>
+		<filter-class>jee.rest.RESTCORSFilter</filter-class>
+		<init-param>
+			<param-name>CORS_ALLOW_ORIGIN</param-name>
+			<param-value>*</param-value>
+		</init-param>
+		<init-param>
+			<param-name>CORS_ALLOW_METHODS</param-name>
+			<param-value>GET, PUT, POST</param-value>
+		</init-param>	
+	</filter>
+	<filter-mapping>
+		<filter-name>cors-filter</filter-name>
+		<servlet-name>rest-servlet</servlet-name>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>rest-servlet</servlet-name>
+		<servlet-class>nl.ordina.tools.soatool.rest.SOAToolRESTServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rest-servlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<display-name>SOA Tool Server</display-name>
+</web-app>

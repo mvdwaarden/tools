@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="0.2"
+	targetNamespace="http://servicespecifications.belastingdienst.nl/gegevens/verstrekkingenloketservice_v0.1/raadplegenVarKrGegevensRequest"
+	xmlns="http://servicespecifications.belastingdienst.nl/gegevens/verstrekkingenloketservice_v0.1/raadplegenVarKrGegevensRequest"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="raadplegenVarKrGegevensRequest">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="finummer" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="9"></xsd:length>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,6 @@
+{
+	"a": "test json field a",
+	"b": "test json field b",
+    "c":[1,2,3
+	]	
+}

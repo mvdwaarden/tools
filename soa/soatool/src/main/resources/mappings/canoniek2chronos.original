@@ -1,0 +1,24 @@
+CANONIEK;CHRONOS;;
+BetrokkenPersoon.Persoon.NatuurlijkPersoon;NatuurlijkePersonen;;
+BetrokkenPersoon.Persoon.Nietnatuurlijkpersoon;NietNatuurlijkePersonen;?;Naam checken
+Geboorte;;;
+Bronbevraging;Informatieverzoeken;;
+Bronbevraging;Waarnemingen;;
+functieVervulling;Functievervulling;;
+Zaak.Gebeurtenis;Gebeurtenis;;
+Zaak;Zaken;;
+BetrokkenPersoon;Personen;;
+Relatie;Relaties;;
+Waarnemingen;Waarnemingsregels;;
+Waarnemingverbijzondering;;;
+StrafrechterlijkAntecedent;Waarnemingsregels;;DATA XML
+FinancieelEconomischAntecedent;Waarnemingsregels;;DATA XML
+Wetsartikelcode;;;
+JustitieelDocumentatieZaak;;;
+;Toets;;
+;Analysedeviatie;;
+Toetsresultaat;Toetsresultaat;;
+ToetsresultaatProfiel;ToetsresultaatProfiel;?;Veld of tabel
+ToetsresultaatVerschijnsel;ToetsresultaatVerschijnsel;;
+ToetsresultaatIndicator;ToetsresultaatIndicator;;
+OnderzoekssubjectScore;OnderzoeksubjectScore;;

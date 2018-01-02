@@ -1,0 +1,1519 @@
+{
+   "results": [   {
+      "columns":       [
+         "n",
+         "e",
+         "p"
+      ],
+      "data":       [
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               },
+                              {
+                  "id": "9131",
+                  "labels": ["WSDL"],
+                  "properties":                   {
+                     "_unique_id": "WSDLNode:http://xmlns.oracle.com/pcbpel/adapter/db/osb/BeschikkingAcmService/haalopBeschikkingenAcm/haalopBeschikkingenAcm",
+                     "name": "http://xmlns.oracle.com/pcbpel/adapter/db/osb/BeschikkingAcmService/haalopBeschikkingenAcm/haalopBeschikkingenAcm",
+                     "description": "haalopBeschikkingenAcm",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/osb/BeschikkingAcmService/haalopBeschikkingenAcm/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.wsdl.WSDLNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "10856",
+               "type": "HAS",
+               "startNode": "9131",
+               "endNode": "2",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "1",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm",
+                     "id": "haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "0",
+               "type": "HAS",
+               "startNode": "1",
+               "endNode": "2",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "3",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "name": "BeschikkingAcmService/xsd/haalopBeschikkingenAcm_sp.xsd",
+                     "description": "InputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "6",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "name": "InputParameters",
+                     "description": "InputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "3",
+               "type": "HAS",
+               "startNode": "6",
+               "endNode": "3",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "3",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "name": "BeschikkingAcmService/xsd/haalopBeschikkingenAcm_sp.xsd",
+                     "description": "InputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "4",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/P_KVKNR",
+                     "name": "P_KVKNR",
+                     "description": "P_KVKNR",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/P_KVKNR",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "1",
+               "type": "HAS",
+               "startNode": "3",
+               "endNode": "4",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "3",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "name": "BeschikkingAcmService/xsd/haalopBeschikkingenAcm_sp.xsd",
+                     "description": "InputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "5",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/P_NAAM",
+                     "name": "P_NAAM",
+                     "description": "P_NAAM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/P_NAAM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "2",
+               "type": "HAS",
+               "startNode": "3",
+               "endNode": "5",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               },
+                              {
+                  "id": "6",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "name": "InputParameters",
+                     "description": "InputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/InputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "4",
+               "type": "HAS",
+               "startNode": "2",
+               "endNode": "6",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "7",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "name": "BeschikkingAcmService/xsd/haalopBeschikkingenAcm_sp.xsd",
+                     "description": "OutputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "9",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "name": "OutputParameters",
+                     "description": "OutputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "6",
+               "type": "HAS",
+               "startNode": "9",
+               "endNode": "7",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "7",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "name": "BeschikkingAcmService/xsd/haalopBeschikkingenAcm_sp.xsd",
+                     "description": "OutputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "8",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM",
+                     "name": "GET_NMA_BY_KVKNR_OF_NAAM",
+                     "description": "GET_NMA_BY_KVKNR_OF_NAAM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "5",
+               "type": "HAS",
+               "startNode": "7",
+               "endNode": "8",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               },
+                              {
+                  "id": "9",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "name": "OutputParameters",
+                     "description": "OutputParameters",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/OutputParameters",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "7",
+               "type": "HAS",
+               "startNode": "2",
+               "endNode": "9",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               },
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "15",
+               "type": "HAS",
+               "startNode": "2",
+               "endNode": "10",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "19",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "name": "GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "description": "GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE"
+                  }
+               },
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "19069",
+               "type": "ISA",
+               "startNode": "19",
+               "endNode": "10",
+               "properties":                {
+                  "_unique_id": "ISA",
+                  "name": "ISA",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "11",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/UITVAARDIGING_DTM",
+                     "name": "UITVAARDIGING_DTM",
+                     "description": "UITVAARDIGING_DTM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/UITVAARDIGING_DTM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/dateTime"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "8",
+               "type": "HAS",
+               "startNode": "10",
+               "endNode": "11",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "12",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/NMA_ZAAKNUMMER",
+                     "name": "NMA_ZAAKNUMMER",
+                     "description": "NMA_ZAAKNUMMER",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/NMA_ZAAKNUMMER",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string20"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "9",
+               "type": "HAS",
+               "startNode": "10",
+               "endNode": "12",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "13",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/KVK_NUMMER",
+                     "name": "KVK_NUMMER",
+                     "description": "KVK_NUMMER",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/KVK_NUMMER",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string8"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "10",
+               "type": "HAS",
+               "startNode": "10",
+               "endNode": "13",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "14",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/VESTIGINGSPLAATS",
+                     "name": "VESTIGINGSPLAATS",
+                     "description": "VESTIGINGSPLAATS",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/VESTIGINGSPLAATS",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string50"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "11",
+               "type": "HAS",
+               "startNode": "10",
+               "endNode": "14",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "15",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/BEDRIJFSNAAM",
+                     "name": "BEDRIJFSNAAM",
+                     "description": "BEDRIJFSNAAM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/BEDRIJFSNAAM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string100"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "12",
+               "type": "HAS",
+               "startNode": "10",
+               "endNode": "15",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "16",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ONHERROEPELIJK_DTM",
+                     "name": "ONHERROEPELIJK_DTM",
+                     "description": "ONHERROEPELIJK_DTM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ONHERROEPELIJK_DTM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/dateTime"
+                  }
+               },
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "13",
+               "type": "HAS",
+               "startNode": "10",
+               "endNode": "16",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "17",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/VESTIGINGSLAND",
+                     "name": "VESTIGINGSLAND",
+                     "description": "VESTIGINGSLAND",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/VESTIGINGSLAND",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string50"
+                  }
+               },
+                              {
+                  "id": "10",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "name": "ACM.ACM_BNA_TPE",
+                     "description": "ACM.ACM_BNA_TPE",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "14",
+               "type": "HAS",
+               "startNode": "10",
+               "endNode": "17",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               },
+                              {
+                  "id": "18",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB",
+                     "name": "ACM.ACM_BNA_TAB",
+                     "description": "ACM.ACM_BNA_TAB",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "17",
+               "type": "HAS",
+               "startNode": "2",
+               "endNode": "18",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "18",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB",
+                     "name": "ACM.ACM_BNA_TAB",
+                     "description": "ACM.ACM_BNA_TAB",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "8",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM",
+                     "name": "GET_NMA_BY_KVKNR_OF_NAAM",
+                     "description": "GET_NMA_BY_KVKNR_OF_NAAM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "19063",
+               "type": "ISA",
+               "startNode": "8",
+               "endNode": "18",
+               "properties":                {
+                  "_unique_id": "ISA",
+                  "name": "ISA",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "19",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "name": "GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "description": "GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/GET_NMA_BY_KVKNR_OF_NAAM_ITEM",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TPE"
+                  }
+               },
+                              {
+                  "id": "18",
+                  "labels": ["XSDComplexType"],
+                  "properties":                   {
+                     "_unique_id": "XSDComplexTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB",
+                     "name": "ACM.ACM_BNA_TAB",
+                     "description": "ACM.ACM_BNA_TAB",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/ACM.ACM_BNA_TAB",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDComplexTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "16",
+               "type": "HAS",
+               "startNode": "18",
+               "endNode": "19",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               },
+                              {
+                  "id": "20",
+                  "labels": ["XSDSimpleType"],
+                  "properties":                   {
+                     "_unique_id": "XSDSimpleTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string20",
+                     "name": "string20",
+                     "description": "string20",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string20",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDSimpleTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "18",
+               "type": "HAS",
+               "startNode": "2",
+               "endNode": "20",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "20",
+                  "labels": ["XSDSimpleType"],
+                  "properties":                   {
+                     "_unique_id": "XSDSimpleTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string20",
+                     "name": "string20",
+                     "description": "string20",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string20",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDSimpleTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "12",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/NMA_ZAAKNUMMER",
+                     "name": "NMA_ZAAKNUMMER",
+                     "description": "NMA_ZAAKNUMMER",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/NMA_ZAAKNUMMER",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string20"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "19064",
+               "type": "ISA",
+               "startNode": "12",
+               "endNode": "20",
+               "properties":                {
+                  "_unique_id": "ISA",
+                  "name": "ISA",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "2",
+                  "labels": ["XSD"],
+                  "properties":                   {
+                     "namespace": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_unique_id": "XSDNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "name": "BeschikkingAcmService/haalopBeschikkingenAcm.wsdl",
+                     "description": "haalopBeschikkingenAcm_sp",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "schemaLocation": "xsd/haalopBeschikkingenAcm_sp.xsd"
+                  }
+               },
+                              {
+                  "id": "21",
+                  "labels": ["XSDSimpleType"],
+                  "properties":                   {
+                     "_unique_id": "XSDSimpleTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string8",
+                     "name": "string8",
+                     "description": "string8",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string8",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDSimpleTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "19",
+               "type": "HAS",
+               "startNode": "2",
+               "endNode": "21",
+               "properties":                {
+                  "_unique_id": "HAS",
+                  "name": "HAS",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }},
+         {"graph":          {
+            "nodes":             [
+                              {
+                  "id": "21",
+                  "labels": ["XSDSimpleType"],
+                  "properties":                   {
+                     "_unique_id": "XSDSimpleTypeNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string8",
+                     "name": "string8",
+                     "description": "string8",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string8",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDSimpleTypeNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106"
+                  }
+               },
+                              {
+                  "id": "13",
+                  "labels": ["XSDElement"],
+                  "properties":                   {
+                     "_unique_id": "XSDElementNode:http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/KVK_NUMMER",
+                     "name": "KVK_NUMMER",
+                     "description": "KVK_NUMMER",
+                     "id": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/KVK_NUMMER",
+                     "_gen_time": "2016-04-26 17:31",
+                     "_gen_user": "system",
+                     "_gen_run_number": "run_venj_106",
+                     "_gen_src_classname": "graph.ext.dm.xsd.XSDElementNode",
+                     "_gen_src_type": "NODE",
+                     "_mod_time": "2016-04-26 17:31",
+                     "_mod_user": "system",
+                     "_mod_run_number": "run_venj_106",
+                     "type": "http://xmlns.oracle.com/pcbpel/adapter/db/sp/haalopBeschikkingenAcm/string8"
+                  }
+               }
+            ],
+            "relationships": [            {
+               "id": "19065",
+               "type": "ISA",
+               "startNode": "13",
+               "endNode": "21",
+               "properties":                {
+                  "_unique_id": "ISA",
+                  "name": "ISA",
+                  "_gen_time": "2016-04-26 17:31",
+                  "_gen_user": "system",
+                  "_gen_run_number": "run_venj_106",
+                  "_gen_src_classname": "graph.dm.Edge",
+                  "_gen_src_type": "EDGE",
+                  "_mod_time": "2016-04-26 17:31",
+                  "_mod_user": "system",
+                  "_mod_run_number": "run_venj_106",
+                  "weight": 0
+               }
+            }]
+         }}
+      ]
+   }],
+   "errors": []
+}

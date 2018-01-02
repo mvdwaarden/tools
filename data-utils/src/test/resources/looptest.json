@@ -1,0 +1,474 @@
+{
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJCSF8lBZEwokRhngABHRcdoI",
+         "types" : [ "sublocality_level_1", "sublocality", "political" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJK1kKR2lDwokRBXtcbIvRCUE",
+         "types" : [ "sublocality_level_1", "sublocality", "political" ]
+      }
+   ],
+   "routes" : [
+      {
+         "bounds" : {
+            "northeast" : {
+               "lat" : 40.728783,
+               "lng" : -73.78975029999999
+            },
+            "southwest" : {
+               "lat" : 40.675579,
+               "lng" : -73.94821999999999
+            }
+         },
+         "copyrights" : "Kaartgegevens ©2015 Google",
+         "legs" : [
+            {
+               "arrival_time" : {
+                  "text" : "06:42",
+                  "time_zone" : "America/New_York",
+                  "value" : 1443004930
+               },
+               "departure_time" : {
+                  "text" : "05:52",
+                  "time_zone" : "America/New_York",
+                  "value" : 1443001954
+               },
+               "distance" : {
+                  "text" : "10,9 mijl",
+                  "value" : 17591
+               },
+               "duration" : {
+                  "text" : "50 min.",
+                  "value" : 2976
+               },
+               "end_address" : "Queens, New York, Verenigde Staten",
+               "end_location" : {
+                  "lat" : 40.7282259,
+                  "lng" : -73.7948332
+               },
+               "start_address" : "Brooklyn, New York, Verenigde Staten",
+               "start_location" : {
+                  "lat" : 40.678183,
+                  "lng" : -73.94416129999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0,2 mijl",
+                        "value" : 341
+                     },
+                     "duration" : {
+                        "text" : "4 min.",
+                        "value" : 266
+                     },
+                     "end_location" : {
+                        "lat" : 40.67838,
+                        "lng" : -73.94821999999999
+                     },
+                     "html_instructions" : "Loop naar Nostrand Avenue",
+                     "polyline" : {
+                        "points" : "s}gwF~eibMP@[hPMAC`AEvAAj@?JCn@"
+                     },
+                     "start_location" : {
+                        "lat" : 40.678183,
+                        "lng" : -73.94416129999999
+                     },
+                     "steps" : [
+                        {
+                           "distance" : {
+                              "text" : "33 ft",
+                              "value" : 10
+                           },
+                           "duration" : {
+                              "text" : "1 min.",
+                              "value" : 8
+                           },
+                           "end_location" : {
+                              "lat" : 40.6780899,
+                              "lng" : -73.9441714
+                           },
+                           "html_instructions" : "Ga in \u003cb\u003ezuidelijke\u003c/b\u003e riching op \u003cb\u003eBrooklyn Ave\u003c/b\u003e naar \u003cb\u003eAtlantic Ave\u003c/b\u003e",
+                           "polyline" : {
+                              "points" : "s}gwF~eibMP@"
+                           },
+                           "start_location" : {
+                              "lat" : 40.678183,
+                              "lng" : -73.94416129999999
+                           },
+                           "travel_mode" : "WALKING"
+                        },
+                        {
+                           "distance" : {
+                              "text" : "0,1 mijl",
+                              "value" : 234
+                           },
+                           "duration" : {
+                              "text" : "3 min.",
+                              "value" : 178
+                           },
+                           "end_location" : {
+                              "lat" : 40.6782332,
+                              "lng" : -73.9469381
+                           },
+                           "html_instructions" : "Sla \u003cb\u003erechtsaf\u003c/b\u003e naar \u003cb\u003eAtlantic Ave\u003c/b\u003e",
+                           "maneuver" : "turn-right",
+                           "polyline" : {
+                              "points" : "a}gwF`fibM[hP"
+                           },
+                           "start_location" : {
+                              "lat" : 40.6780899,
+                              "lng" : -73.9441714
+                           },
+                           "travel_mode" : "WALKING"
+                        },
+                        {
+                           "distance" : {
+                              "text" : "26 ft",
+                              "value" : 8
+                           },
+                           "duration" : {
+                              "text" : "1 min.",
+                              "value" : 10
+                           },
+                           "end_location" : {
+                              "lat" : 40.6783042,
+                              "lng" : -73.9469307
+                           },
+                           "html_instructions" : "Sla \u003cb\u003erechtsaf\u003c/b\u003e naar \u003cb\u003eNew York Ave\u003c/b\u003e",
+                           "maneuver" : "turn-right",
+                           "polyline" : {
+                              "points" : "}}gwFjwibMMA"
+                           },
+                           "start_location" : {
+                              "lat" : 40.6782332,
+                              "lng" : -73.9469381
+                           },
+                           "travel_mode" : "WALKING"
+                        },
+                        {
+                           "distance" : {
+                              "text" : "292 ft",
+                              "value" : 89
+                           },
+                           "duration" : {
+                              "text" : "1 min.",
+                              "value" : 70
+                           },
+                           "end_location" : {
+                              "lat" : 40.67838,
+                              "lng" : -73.94821999999999
+                           },
+                           "html_instructions" : "Sla \u003cb\u003elinksaf\u003c/b\u003e naar \u003cb\u003eAtlantic Ave\u003c/b\u003e",
+                           "maneuver" : "turn-left",
+                           "polyline" : {
+                              "points" : "k~gwFhwibMC`AEvAAj@?JCn@"
+                           },
+                           "start_location" : {
+                              "lat" : 40.6783042,
+                              "lng" : -73.9469307
+                           },
+                           "travel_mode" : "WALKING"
+                        }
+                     ],
+                     "travel_mode" : "WALKING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "7,6 mijl",
+                        "value" : 12303
+                     },
+                     "duration" : {
+                        "text" : "13 min.",
+                        "value" : 780
+                     },
+                     "end_location" : {
+                        "lat" : 40.6996,
+                        "lng" : -73.80852999999999
+                     },
+                     "html_instructions" : "Trein naar West Hempstead",
+                     "polyline" : {
+                        "points" : "{~gwFj_jbMFgCBcABoA@]HaDJgF@o@D{A?KJsFJgE@u@@s@@MLoGH{CDeB@YDsBJcGD{@ByA@[LiGHiDDgB?GFgCJgG@UBmABkAJaEHoD@}@Bw@@w@@e@FeCFsCDsBBw@@c@DkBFgDFaCDoA@w@Bw@DaBPsHHwEX}Jn@a[`@qQb@gUFiC@m@BcAH_BFaANaCJ{ANsB@[Bo@Ba@@k@?uBAmCKkIKsDQsFOsDEu@g@}HI_AYiDu@uHIs@}@sHGa@mAmIi@aDSeAeBgJsAeHO{@e@aCwCuO[eBg@gCmIyc@UkAiDqQcCsMiCaNsCgO[gBUsAm@_DsByKeEwT{BqLiCyMiB{JgCaNmB_KoBmK{DkSoA{GgDsQeBaJuBaLyAyHkCiNiGq\\AIkAoF_A_Fs@sD_@{Be@iC_@qAe@kBc@aBKWk@{BCMM}@MsAAi@EkB?CMoBAG{@sI}AmI{@\\"
+                     },
+                     "start_location" : {
+                        "lat" : 40.67838,
+                        "lng" : -73.94821999999999
+                     },
+                     "transit_details" : {
+                        "arrival_stop" : {
+                           "location" : {
+                              "lat" : 40.6996,
+                              "lng" : -73.80852999999999
+                           },
+                           "name" : "Jamaica"
+                        },
+                        "arrival_time" : {
+                           "text" : "06:10",
+                           "time_zone" : "America/New_York",
+                           "value" : 1443003000
+                        },
+                        "departure_stop" : {
+                           "location" : {
+                              "lat" : 40.67838,
+                              "lng" : -73.94821999999999
+                           },
+                           "name" : "Nostrand Avenue"
+                        },
+                        "departure_time" : {
+                           "text" : "05:57",
+                           "time_zone" : "America/New_York",
+                           "value" : 1443002220
+                        },
+                        "headsign" : "West Hempstead",
+                        "line" : {
+                           "agencies" : [
+                              {
+                                 "name" : "Long Island Rail Road",
+                                 "phone" : "1 718-558-7400",
+                                 "url" : "http://web.mta.info/lirr"
+                              }
+                           ],
+                           "color" : "#00a1de",
+                           "name" : "West Hempstead",
+                           "text_color" : "#ffffff",
+                           "vehicle" : {
+                              "icon" : "//maps.gstatic.com/mapfiles/transit/iw2/6/rail.png",
+                              "name" : "Trein",
+                              "type" : "HEAVY_RAIL"
+                           }
+                        },
+                        "num_stops" : 2
+                     },
+                     "travel_mode" : "TRANSIT"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "367 ft",
+                        "value" : 112
+                     },
+                     "duration" : {
+                        "text" : "2 min.",
+                        "value" : 112
+                     },
+                     "end_location" : {
+                        "lat" : 40.700489,
+                        "lng" : -73.807884
+                     },
+                     "html_instructions" : "Loop naar Archer Av /Sutphin Bl",
+                     "polyline" : {
+                        "points" : "oclwFhvnaMqDaC"
+                     },
+                     "start_location" : {
+                        "lat" : 40.6996,
+                        "lng" : -73.80852999999999
+                     },
+                     "steps" : [
+                        {
+                           "distance" : {
+                              "text" : "367 ft",
+                              "value" : 112
+                           },
+                           "duration" : {
+                              "text" : "2 min.",
+                              "value" : 112
+                           },
+                           "end_location" : {
+                              "lat" : 40.700489,
+                              "lng" : -73.807884
+                           },
+                           "polyline" : {
+                              "points" : "oclwFhvnaMqDaC"
+                           },
+                           "start_location" : {
+                              "lat" : 40.6996,
+                              "lng" : -73.80852999999999
+                           },
+                           "travel_mode" : "WALKING"
+                        }
+                     ],
+                     "travel_mode" : "WALKING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "2,9 mijl",
+                        "value" : 4605
+                     },
+                     "duration" : {
+                        "text" : "19 min.",
+                        "value" : 1140
+                     },
+                     "end_location" : {
+                        "lat" : 40.728783,
+                        "lng" : -73.79284699999999
+                     },
+                     "html_instructions" : "Bus naar Little Neck L Neck Pky",
+                     "polyline" : {
+                        "points" : "ailwFfrnaMIDGa@MiAYyAC_@QkBIa@k@}CWoA[cBGm@w@_GUwAOgAA?E]Ei@qAgHKy@Kw@AYKaAY_CAWA[w@gFk@qDG[I[O}@?Ao@gE_AsCISm@aB_@yAmAsEI[uGjDUBMm@GYGUa@uBe@eC{@qEgAh@oFhCgDbByCxAqCtA|@hD?@H\\y@Bu@Es@GI@s@@kAJcAXu@VkAb@UJ}@L]@aAIWG]MGCeB}@uC{Ay@c@GCc@OQGc@EcDM]E[G_@MSGe@USOMIYWOMMQ[i@OWAUOa@SKa@S{@Ws@S[I_@MUYo@O_FA}@@gDB_BF}AHm@Rs@`@o@b@w@b@_B|@kBv@SHC@SB[FgAZcAZkBl@IB}FjBcAZAK"
+                     },
+                     "start_location" : {
+                        "lat" : 40.700489,
+                        "lng" : -73.807884
+                     },
+                     "transit_details" : {
+                        "arrival_stop" : {
+                           "location" : {
+                              "lat" : 40.728783,
+                              "lng" : -73.79284699999999
+                           },
+                           "name" : "Utopia Py/75 Av"
+                        },
+                        "arrival_time" : {
+                           "text" : "06:39",
+                           "time_zone" : "America/New_York",
+                           "value" : 1443004740
+                        },
+                        "departure_stop" : {
+                           "location" : {
+                              "lat" : 40.700489,
+                              "lng" : -73.807884
+                           },
+                           "name" : "Archer Av /Sutphin Bl"
+                        },
+                        "departure_time" : {
+                           "text" : "06:20",
+                           "time_zone" : "America/New_York",
+                           "value" : 1443003600
+                        },
+                        "headsign" : "Little Neck L Neck Pky",
+                        "line" : {
+                           "agencies" : [
+                              {
+                                 "name" : "MTA New York City Transit",
+                                 "phone" : "1 718-330-1234",
+                                 "url" : "http://www.mta.info/"
+                              }
+                           ],
+                           "color" : "#f2a119",
+                           "name" : "Little Neck or Queensborough Community College - Jamaica",
+                           "short_name" : "Q30",
+                           "text_color" : "#ffffff",
+                           "url" : "http://web.mta.info/nyct/bus/schedule/queens/q030cur.pdf",
+                           "vehicle" : {
+                              "icon" : "//maps.gstatic.com/mapfiles/transit/iw2/6/bus.png",
+                              "name" : "Bus",
+                              "type" : "BUS"
+                           }
+                        },
+                        "num_stops" : 18
+                     },
+                     "travel_mode" : "TRANSIT"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,1 mijl",
+                        "value" : 230
+                     },
+                     "duration" : {
+                        "text" : "3 min.",
+                        "value" : 189
+                     },
+                     "end_location" : {
+                        "lat" : 40.7282259,
+                        "lng" : -73.7948332
+                     },
+                     "html_instructions" : "Loop naar Queens, New York, Verenigde Staten",
+                     "polyline" : {
+                        "points" : "{yqwFhtkaM@Jv@WDTJRd@rD^rDc@D"
+                     },
+                     "start_location" : {
+                        "lat" : 40.728783,
+                        "lng" : -73.79284699999999
+                     },
+                     "steps" : [
+                        {
+                           "distance" : {
+                              "text" : "108 ft",
+                              "value" : 33
+                           },
+                           "duration" : {
+                              "text" : "1 min.",
+                              "value" : 25
+                           },
+                           "end_location" : {
+                              "lat" : 40.7284873,
+                              "lng" : -73.79278669999999
+                           },
+                           "html_instructions" : "Ga in \u003cb\u003ezuidelijke\u003c/b\u003e riching op \u003cb\u003eUtopia Pkwy\u003c/b\u003e naar \u003cb\u003e75th Ave\u003c/b\u003e",
+                           "polyline" : {
+                              "points" : "{yqwFhtkaM@Jv@W"
+                           },
+                           "start_location" : {
+                              "lat" : 40.728783,
+                              "lng" : -73.79284699999999
+                           },
+                           "travel_mode" : "WALKING"
+                        },
+                        {
+                           "distance" : {
+                              "text" : "0,1 mijl",
+                              "value" : 177
+                           },
+                           "duration" : {
+                              "text" : "3 min.",
+                              "value" : 150
+                           },
+                           "end_location" : {
+                              "lat" : 40.7280468,
+                              "lng" : -73.79479909999999
+                           },
+                           "html_instructions" : "Sla \u003cb\u003erechtsaf\u003c/b\u003e naar \u003cb\u003e75th Ave\u003c/b\u003e",
+                           "maneuver" : "turn-right",
+                           "polyline" : {
+                              "points" : "axqwF|skaMDTJRd@rD^rD"
+                           },
+                           "start_location" : {
+                              "lat" : 40.7284873,
+                              "lng" : -73.79278669999999
+                           },
+                           "travel_mode" : "WALKING"
+                        },
+                        {
+                           "distance" : {
+                              "text" : "66 ft",
+                              "value" : 20
+                           },
+                           "duration" : {
+                              "text" : "1 min.",
+                              "value" : 14
+                           },
+                           "end_location" : {
+                              "lat" : 40.7282259,
+                              "lng" : -73.7948332
+                           },
+                           "html_instructions" : "Sla \u003cb\u003erechtsaf\u003c/b\u003e naar \u003cb\u003e175th St\u003c/b\u003e",
+                           "maneuver" : "turn-right",
+                           "polyline" : {
+                              "points" : "iuqwFn`laMc@D"
+                           },
+                           "start_location" : {
+                              "lat" : 40.7280468,
+                              "lng" : -73.79479909999999
+                           },
+                           "travel_mode" : "WALKING"
+                        }
+                     ],
+                     "travel_mode" : "WALKING"
+                  }
+               ],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : {
+            "points" : "s}gwF~eibMP@[hPMAC`AGbCCz@N{GXwMp@k\\n@eYbBox@n@iY\\eOb@uQpAsm@p@c]PaDZ}EXaF@aDMyM]gLUiFq@}JoA_NgAgJuAoJ}@gFyDmSiFyXuP_}@{XkzAeGk[qF}YiNut@}Mqs@uK{k@mAyFyDySeA}Do@yBo@iCM}@MsAGuCMsB}@{I}AmI{@\\qDaCIDUkB]yB[mC_BqI_AmHe@_DG]Ei@qAgHWqBM{A[wCA[w@gFs@mEYyAo@iEiAgDm@aB_@yAmAsEI[uGjDUBMm@GYi@kCaBwIgAh@cU|K|@jDH\\y@BiBM}@BkAJcAXu@VaBn@}@L]@yAQ]M}HaE}@[gESy@MyAk@a@Yi@e@y@sAAUOa@u@_@kCu@_@MUYo@O_FA}@@gDB_BF}AHm@RcBdAw@b@_B|@kBv@SHWDcBb@oDhAkIjCAK@Jv@WDTJRd@rD^rDc@D"
+         },
+         "summary" : "a",
+         "warnings" : [
+            "Wandelroutebeschrijvingen zijn in bèta. Let goed op – mogelijk zijn er niet overal trottoirs of wandelpaden langs deze route."
+         ],
+         "waypoint_order" : []
+      }
+   ],
+   "status" : "OK"
+}
