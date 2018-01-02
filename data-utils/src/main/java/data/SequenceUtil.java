@@ -303,7 +303,11 @@ public class SequenceUtil implements Util {
 		}
 
 		private String getFilename() {
-			return definition.getLocation() + DataUtil.PATH_SEPARATOR + definition.getName() + ".seq";
+			if (null != definition.getLocation() && !definition.getLocation().isEmpty())
+				return definition.getLocation() + DataUtil.PATH_SEPARATOR + definition.getName() + ".seq";
+			else
+				return ConfigurationUtil.getInstance().getTestOutputPath() + DataUtil.PATH_SEPARATOR
+						+ definition.getName() + ".seq";
 		}
 	}
 }

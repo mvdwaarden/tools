@@ -3,9 +3,12 @@
 .settings/*
 .project
 .classpath
+target
+target/*
 
 #Custom
 *xml.out
+*.seq
 
 # Compiled class file
 *.class
