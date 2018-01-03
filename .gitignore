@@ -5,6 +5,8 @@
 .classpath
 target
 target/*
+bin
+bin/*
 
 #Custom
 *xml.out
