@@ -4,14 +4,17 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.custommonkey.xmlunit.Diff;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import conversion.ConversionUtil;
 import csv.CSVData;
@@ -82,7 +85,7 @@ public class DataUtilTest {
 		CSVUtil.getInstance().concatShiftUp(tmpInFile, tmpOutFile, ',', 3, CSVUtil.Option.TRIM_VALUES);
 		csv = CSVUtil.getInstance().readFromFile(tmpOutFile, ',', CSVUtil.Option.TRIM_VALUES);
 		Assert.assertEquals(csv.getLines().size(), 2);
-		
+
 		Assert.assertEquals(csv.getLines().get(0)[0], "abcd");
 		Assert.assertEquals(csv.getLines().get(1)[0], "fghi");
 	}
@@ -399,8 +402,7 @@ public class DataUtilTest {
 
 	@Test
 	public void testSimplifyPath() {
-		String[][] testset = new String[][] {
-				{ "d://a/b/../../c", "d://c" /* d is considered a protocol! */ },
+		String[][] testset = new String[][] { { "d://a/b/../../c", "d://c" /* d is considered a protocol! */ },
 				{ "d:/a//b/../../c", "d:/c" /* d is considered a protocol! */ },
 				{ "file://a/b/c/../d", "file://a/b/d" }, { "file://c:\\a\\b\\c", "file://c:/a/b/c" },
 				{ "http://whatever.com/a/c/../q/r", "http://whatever.com/a/q/r" },
@@ -487,10 +489,12 @@ public class DataUtilTest {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		ByteArrayInputStream bis = new ByteArrayInputStream(input.getBytes());
 		XMLUtil.getInstance().parse(bis, new XMLSAXEchoHandler(bos));
-		// we compare to a specific XML because the copy modifies the syntaxis
-		// (not the semantics) of the original XML
-		String compare = DataUtil.getInstance().readFromFile(filename + "-compare.xml");
 		DataUtil.getInstance().writeToFile(filename + "xml.out", bos.toString());
-		Assert.assertEquals("comparisson to xml/copytest-compare.xml failed", bos.toString(), compare);
+		try {
+			Diff differ = new Diff(input, bos.toString());
+			Assert.assertTrue("comparisson to xml/copytest-compare.xml failed", differ.similar());
+		} catch (SAXException | IOException e) {
+			Assert.assertTrue("Echo handler problem",false);
+		} 
 	}
 }

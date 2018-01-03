@@ -1,7 +1,5 @@
 package nl.ordina.tools.soa.test;
 
-import java.io.File;
-
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,7 +15,7 @@ import nl.ordina.tools.writer.ParseTreeWriter;
 public class SoaSyntaxTest {
 	@Test
 	public void testSyntax() {
-		String[] files = new String[] { "create1.ddl","create2.ddl" };
+		String[] files = new String[] {  };
 
 		for (String file : files) {
 			String ddl = DataUtil.getInstance()
