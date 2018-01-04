@@ -8,6 +8,10 @@ target/*
 bin
 bin/*
 
+#Angular
+node_modules
+node_modules/*
+
 #Custom
 *xml.out
 *.seq
