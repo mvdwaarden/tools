@@ -208,7 +208,6 @@ public class SOAToolRESTServlet extends RESTDispatchServlet {
 					}
 					clu.addNode(node);
 				}
-
 			}
 		}
 		String name = function;
@@ -236,7 +235,7 @@ public class SOAToolRESTServlet extends RESTDispatchServlet {
 		result.add(targetdir + DataUtil.PATH_SEPARATOR + graMeta.getName() + ".gv.svg");
 		LogUtil.getInstance().info("perform graph conversion [" + function + "]");
 		GraphConverter graCvt = new GraphConverter();
-		graCvt.convertGV2GML_PNG_SVG(targetdir, true);
+		graCvt.convertGV2GML_PNG_SVG(targetdir, false);
 
 		return result;
 	}

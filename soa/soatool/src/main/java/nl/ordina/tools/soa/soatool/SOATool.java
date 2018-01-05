@@ -190,6 +190,7 @@ public class SOATool extends Tool {
 	public static final String SOA_TOOL_CSV_RULE_EXECUTE_RULE_CONFIG = "soatool.csv.rule.execute.rule.config";
 	public static final String FUNCTION_GET_WSDL_ARTIFACTS = "wsdl";
 	public static final String FUNCTION_HTML_TABLE_EXTRACT = "htmltabext";
+	public static final String FUNCTION_SOA_TOOL_SRV = "soatoolsrv";
 	public static final String FUNCTION_CSV_RULE_EXECUTE = "csvruleexec";
 	public static final String FUNCTION_LIST_CONFIGURATIONS = "list";
 	public static final String FUNCTION_ORACLE_ANALYSIS = "orcl";
@@ -473,8 +474,8 @@ public class SOATool extends Tool {
 
 	/**
 	 * Connect business service to proxy services IF (a) the endpoints in the
-	 * business service and the proxy service 'overlap' AND the providers are
-	 * the same (i.e. jms, http etc).
+	 * business service and the proxy service 'overlap' AND the providers are the
+	 * same (i.e. jms, http etc).
 	 */
 	public class ConnectOSBBusinessService2ProxyServiceByEndpoints extends GraphLink<Node, Edge<Node>> {
 		@Override
@@ -710,8 +711,8 @@ public class SOATool extends Tool {
 
 	/**
 	 * Deze functie extraheert anonimiserings gegevens van test XML's bestanden.
-	 * Deze geanonimiseerde gegevens kunnen vervolgens weer gebruikt worden,
-	 * voor het anonimseren zelf.
+	 * Deze geanonimiseerde gegevens kunnen vervolgens weer gebruikt worden, voor
+	 * het anonimseren zelf.
 	 * 
 	 * <pre>
 	 * 	- creeert een filelist.xml voor de bestanden in een map
@@ -807,7 +808,7 @@ public class SOATool extends Tool {
 				return true;
 			});
 		} catch (Exception e) {
-			LogUtil.getInstance().error("problem cleaning hexfile : [" + inputfile + "]",e);
+			LogUtil.getInstance().error("problem cleaning hexfile : [" + inputfile + "]", e);
 		}
 
 	}
@@ -1165,10 +1166,38 @@ public class SOATool extends Tool {
 			extractHTMLTable(function, sourcedir, targetdir, options);
 		} else if (function.equals(FUNCTION_CSV_RULE_EXECUTE)) {
 			executeCSVRules(function, sourcedir, targetdir, options);
+		} else if (function.equals(FUNCTION_SOA_TOOL_SRV)) {
+			executeSOAToolSrv(args);
 		}
 		LogUtil.getInstance().info("Execute subdirectory graph conversions");
 		GraphConverter cvt = new GraphConverter();
 		cvt.convertGV2GML_PNG_SVG(targetdir, autoconvert);
+	}
+
+	private void executeSOAToolSrv(String[] args) {
+		String endpoint = StringUtil.getInstance().getArgument(args, "ep");
+		String configuration = StringUtil.getInstance().getArgument(args, "conf");
+		SOAToolCln cln;
+		switch (StringUtil.getInstance().getArgument(args, "op")) {
+		case "init":
+			cln = new SOAToolCln(endpoint, configuration);
+			cln.initNeo4J();
+			break;
+		case "query":
+			cln = new SOAToolCln(endpoint, configuration);
+			String queries = StringUtil.getInstance().getArgument(args, "query");
+			for (String item : queries.split(","))
+				cln.queryExecute(item);
+			break;
+		case "list":
+			cln = new SOAToolCln(endpoint, configuration);
+			for (String item : cln.queryList()) {
+				LogUtil.getInstance().info(item);
+			}
+
+			break;
+		}
+
 	}
 
 	public void analyzeSOAPMessages(String function, String sourcedir, String targetdir, Option[] options) {
@@ -1373,9 +1402,9 @@ public class SOATool extends Tool {
 	}
 
 	/**
-	 * Consider rethinking the purpose of this method. - check if a file
-	 * contains XML with UTF-8 characters - check if a file is UTF-8 encoded and
-	 * contains specific UTF-8 characters
+	 * Consider rethinking the purpose of this method. - check if a file contains
+	 * XML with UTF-8 characters - check if a file is UTF-8 encoded and contains
+	 * specific UTF-8 characters
 	 * 
 	 * @param file
 	 * @param regex
@@ -2468,7 +2497,8 @@ public class SOATool extends Tool {
 				Comparator<Node> enrichComparator = (o1, o2) -> {
 					int result = (o1.getId().equalsIgnoreCase(cluster.getName() + DataUtil.PATH_SEPARATOR + StringUtil
 							.getInstance().replace(o2.getDescription(), "\\[?([^\\]]*)\\]?\\.\\[?([^\\]]*)\\]?,$2")))
-									? 0 : 1;
+									? 0
+									: 1;
 					return result;
 				};
 
@@ -2560,10 +2590,9 @@ public class SOATool extends Tool {
 	}
 
 	/**
-	 * Append CSV mapping information to a mapping graph. The cluster
-	 * information is determined based the filename
-	 * (<ModelFrom>2<ModelTarget>.CSV). The node name is prefixed by the column
-	 * header.
+	 * Append CSV mapping information to a mapping graph. The cluster information is
+	 * determined based the filename (<ModelFrom>2<ModelTarget>.CSV). The node name
+	 * is prefixed by the column header.
 	 * 
 	 * @param file
 	 * @param gra
