@@ -1127,6 +1127,7 @@ public class SOATool extends Tool {
 			createFiles(sourcedir, targetdir);
 		} else if (function.equals(FUNCTION_ORACLE_ANALYSIS)) {
 			analyzeOracle(FUNCTION_ORACLE_ANALYSIS, sourcedir, targetdir, OracleOption.NONE, options);
+			executeSubdirectoryGraphConversions(targetdir, autoconvert);
 		} else if (function.equals(FUNCTION_SLOW_SERVER) && EnumUtil.getInstance().contains(options, Option.CLIENT)) {
 			startSlowServer(sourcedir, targetdir);
 		} else if (function.equals(FUNCTION_JMS_SERVER) && EnumUtil.getInstance().contains(options, Option.CLIENT)) {
@@ -1156,6 +1157,7 @@ public class SOATool extends Tool {
 			combineXMLFiles(function, sourcedir, targetdir, options);
 		} else if (function.equals(FUNCTION_MAPPING_ANALYSIS)) {
 			analyzeMapping(function, sourcedir, targetdir, options);
+			executeSubdirectoryGraphConversions(targetdir, autoconvert);
 		} else if (function.equals(FUNCTION_MAP_XML)) {
 			mapXML(function, sourcedir, targetdir, options);
 		} else if (function.equals(FUNCTION_OEQ_ANALYSIS)) {
@@ -1169,11 +1171,13 @@ public class SOATool extends Tool {
 		} else if (function.equals(FUNCTION_SOA_TOOL_SRV)) {
 			executeSOAToolSrv(args);
 		}
+		
+	}
+	private void executeSubdirectoryGraphConversions(String targetdir,boolean autoconvert) {
 		LogUtil.getInstance().info("Execute subdirectory graph conversions");
 		GraphConverter cvt = new GraphConverter();
 		cvt.convertGV2GML_PNG_SVG(targetdir, autoconvert);
 	}
-
 	private void executeSOAToolSrv(String[] args) {
 		String endpoint = StringUtil.getInstance().getArgument(args, "ep");
 		String configuration = StringUtil.getInstance().getArgument(args, "conf");
