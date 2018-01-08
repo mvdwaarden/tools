@@ -198,12 +198,12 @@ public class SOAToolRESTServlet extends RESTDispatchServlet {
 								+ fieldProperty + "]", e);
 				}
 				if (null != group) {
-					Cluster<Node> clu = mapClusters.get(group);
+					Cluster<Node> clu = mapClusters.get(group.toLowerCase());
 					if (null == clu) {
 						clu = new Cluster<Node>();
 						clu.setName(group);
 						clu.setDescription(group);
-						mapClusters.put(group, clu);
+						mapClusters.put(group.toLowerCase(), clu);
 						clusters.add(clu);
 					}
 					clu.addNode(node);

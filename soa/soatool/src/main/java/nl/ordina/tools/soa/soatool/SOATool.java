@@ -2754,6 +2754,11 @@ public class SOATool extends Tool {
 					} else {
 						collectServiceReferenceType(fn.getId());
 						OSBReader osbReader = new OSBReader(sourcedir);
+						{
+							if (fn.getId().contains("CJIBExportQueue")) {
+								boolean tjakka = true;
+							}
+						}
 						Graph<OSBNode, Edge<OSBNode>> tmp = osbReader.read(fn.getId());
 						graOsb.append(tmp, GraphOption.CHECK_DUPLICATES);
 						write(targetdir);
