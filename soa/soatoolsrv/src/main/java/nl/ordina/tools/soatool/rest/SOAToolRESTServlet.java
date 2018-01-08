@@ -18,6 +18,7 @@ import data.DataUtil;
 import data.LogUtil;
 import data.SequenceUtil;
 import data.StringUtil;
+import graph.GraphOption;
 import graph.dm.Cluster;
 import graph.dm.ClusterNode;
 import graph.dm.Edge;
@@ -217,7 +218,7 @@ public class SOAToolRESTServlet extends RESTDispatchServlet {
 		String[] nodeExclusions = ConfigurationUtil.getInstance()
 				.getSetting(SOATOOL_NEO4J_QUERY + "." + function + ".exclude.filter").split(",");
 		LogUtil.getInstance().info("write result graph to file [" + function + "]");
-		gm.writeGraphInfo(targetdir, gra, clusters, tool.getNodeMarkup(), nodeExclusions);
+		gm.writeGraphInfo(targetdir, gra, clusters, tool.getNodeMarkup(), nodeExclusions,GraphOption.WRITE_CYCLE_INFO);
 
 		result.add(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + ".gv.svg");
 		if (!clusters.isEmpty()) {

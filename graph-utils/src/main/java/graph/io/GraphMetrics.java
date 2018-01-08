@@ -51,7 +51,6 @@ public class GraphMetrics {
 		if (EnumUtil.getInstance().contains(options, GraphOption.WRITE_CYCLE_INFO)) {
 			GraphCycleChecker<N, E> cc = new GraphCycleChecker<N, E>();
 			List<List<E>> cycles = cc.checkCycles(gra, true);
-			;
 			List<List<E>> uncleanCycles;
 
 			if (EnumUtil.getInstance().contains(options, GraphOption.CLEANUP_CYCLE_INFO)) {
@@ -74,19 +73,18 @@ public class GraphMetrics {
 				}
 			}
 			DataUtil.getInstance()
-					.writeToFile(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + "_cycles.gv", wri
-							.write(gra, clusters,
-									(null == clusters) ? new GraphCycleMarkupCallback<N, E>(cc, cycles, uncleanCycles)
-											: null,
-									new String[0], SimpleDottyWriter.Option.GRAPH_OPTION_LEFT_TO_RIGHT)
-							.toString());
+					.writeToFile(
+							targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + "_cycles.gv", wri
+									.write(gra, clusters, new GraphCycleMarkupCallback<N, E>(cc, cycles, uncleanCycles),
+											new String[0], SimpleDottyWriter.Option.GRAPH_OPTION_LEFT_TO_RIGHT)
+									.toString());
 
 		}
 		GraphIndex<N, E> gidx = new GraphIndex<N, E>(gra).build();
 		DataUtil.getInstance().writeToFile(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + ".gv",
 				wri.write(gra, null, new NodeConfigMarkupCallback<N, E>(gidx, nodemarkup), nodeExclusions,
 						SimpleDottyWriter.Option.GRAPH_OPTION_LEFT_TO_RIGHT).toString());
-		if (null != clusters) {
+		if (null != clusters && !clusters.isEmpty()) {
 			DataUtil.getInstance()
 					.writeToFile(
 							targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + "_clustered.gv", wri
@@ -130,7 +128,7 @@ public class GraphMetrics {
 
 		@Override
 		public String[] clusterMarkup(Graph<N, E> graph, Cluster<N> cluster, int depth) {
-			return null;
+			return new String[0];
 		}
 	};
 
