@@ -77,7 +77,7 @@ public class GraphMetrics {
 					}
 				}
 			}
-			DataUtil.getInstance().writeToFile(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + ".gv",
+			DataUtil.getInstance().writeToFile(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + "cycles.gv",
 					wri.write(gra, clusters, (null == clusters) ? new CustomDottyMarkupCallback<N, E>() {
 						@Override
 						public String nodeMarkup(Graph<N, E> graph, N node, int referenceCount) {
@@ -103,52 +103,52 @@ public class GraphMetrics {
 						}
 					} : null, new String[0], SimpleDottyWriter.Option.GRAPH_OPTION_LEFT_TO_RIGHT).toString());
 
-		} else {
-			GraphIndex<N, E> gidx = new GraphIndex<N, E>(gra).build();
-			DataUtil.getInstance().writeToFile(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + ".gv",
-					wri.write(gra, clusters, new CustomDottyMarkupCallback<N, E>() {
-						@Override
-						public String nodeMarkup(Graph<N, E> graph, N node, int referenceCount) {
-							String result;
-							String markup = nodemarkup.get(GraphConst.CONFIG_COLUMN_CLASS, node.getId(),
-									GraphConst.CONFIG_COLUMN_MARKUP);
-							/* TODO callback is parameter! */
-							if (null == markup || markup.isEmpty())
-								markup = nodemarkup.get(GraphConst.CONFIG_COLUMN_CLASS, node.getClass().getName(),
-										GraphConst.CONFIG_COLUMN_MARKUP);
-							if (null != markup)
-								result = StringUtil.getInstance().replace(markup, var -> {
-									GraphQuery<N, E> qry = new GraphQuery<>(gidx, node);
-									Object value = qry.getByPath(var, '|');
-									return (null == value) ? "" : value.toString().replaceAll("\"", "\\\"");
-								});
-							else
-								result = markup;
-							if (null != result) {
-								// clean up empty groups
-								result = result.replaceAll("\\|\\|", "|");
-								result = result.replaceAll("\\|\\{[\\.\\|]?\\}", "");
-								result = result.replaceAll("\\|\\}", "\\}");
-								result = result.replaceAll("\\{\\|", "\\{");
-							}
-							return result;
-						}
-
-						@Override
-						public String[] clusterMarkup(Graph<N, E> graph, Cluster<N> cluster, int depth) {
-							return new String[] {};
-						}
-
-						@Override
-						public String edgeMarkup(Graph<N, E> gra, E edge) {
-							String key = GraphConst.CONFIG_COLUMN_CLASS_SIMPLE_EDGE + "." + edge.getName();
-							String markup = nodemarkup.get(GraphConst.CONFIG_COLUMN_CLASS, key,
-									GraphConst.CONFIG_COLUMN_MARKUP);
-
-							return markup;
-						}
-					}, nodeExclusions, SimpleDottyWriter.Option.GRAPH_OPTION_LEFT_TO_RIGHT).toString());
 		}
+		GraphIndex<N, E> gidx = new GraphIndex<N, E>(gra).build();
+		DataUtil.getInstance().writeToFile(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + ".gv",
+				wri.write(gra, clusters, new CustomDottyMarkupCallback<N, E>() {
+					@Override
+					public String nodeMarkup(Graph<N, E> graph, N node, int referenceCount) {
+						String result;
+						String markup = nodemarkup.get(GraphConst.CONFIG_COLUMN_CLASS, node.getId(),
+								GraphConst.CONFIG_COLUMN_MARKUP);
+						/* TODO callback is parameter! */
+						if (null == markup || markup.isEmpty())
+							markup = nodemarkup.get(GraphConst.CONFIG_COLUMN_CLASS, node.getClass().getName(),
+									GraphConst.CONFIG_COLUMN_MARKUP);
+						if (null != markup)
+							result = StringUtil.getInstance().replace(markup, var -> {
+								GraphQuery<N, E> qry = new GraphQuery<>(gidx, node);
+								Object value = qry.getByPath(var, '|');
+								return (null == value) ? "" : value.toString().replaceAll("\"", "\\\"");
+							});
+						else
+							result = markup;
+						if (null != result) {
+							// clean up empty groups
+							result = result.replaceAll("\\|\\|", "|");
+							result = result.replaceAll("\\|\\{[\\.\\|]?\\}", "");
+							result = result.replaceAll("\\|\\}", "\\}");
+							result = result.replaceAll("\\{\\|", "\\{");
+						}
+						return result;
+					}
+
+					@Override
+					public String[] clusterMarkup(Graph<N, E> graph, Cluster<N> cluster, int depth) {
+						return new String[] {};
+					}
+
+					@Override
+					public String edgeMarkup(Graph<N, E> gra, E edge) {
+						String key = GraphConst.CONFIG_COLUMN_CLASS_SIMPLE_EDGE + "." + edge.getName();
+						String markup = nodemarkup.get(GraphConst.CONFIG_COLUMN_CLASS, key,
+								GraphConst.CONFIG_COLUMN_MARKUP);
+
+						return markup;
+					}
+				}, nodeExclusions, SimpleDottyWriter.Option.GRAPH_OPTION_LEFT_TO_RIGHT).toString());
+
 		return result;
 	}
 }
