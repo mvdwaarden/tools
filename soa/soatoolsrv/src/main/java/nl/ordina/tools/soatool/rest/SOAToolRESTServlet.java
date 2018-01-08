@@ -218,21 +218,22 @@ public class SOAToolRESTServlet extends RESTDispatchServlet {
 		String[] nodeExclusions = ConfigurationUtil.getInstance()
 				.getSetting(SOATOOL_NEO4J_QUERY + "." + function + ".exclude.filter").split(",");
 		LogUtil.getInstance().info("write result graph to file [" + function + "]");
-		gm.writeGraphWithCycleInfo(targetdir, gra, clusters, tool.getNodeMarkup(), nodeExclusions,GraphOption.WRITE_CYCLE_INFO,GraphOption.DUMP_CYCLE_INFO,GraphOption.CLEANUP_CYCLE_INFO);
+		gm.writeGraphInfo(targetdir, gra, clusters, tool.getNodeMarkup(), nodeExclusions);
 		result.add(targetdir + DataUtil.PATH_SEPARATOR + gra.getName() + ".gv.svg");
 		if (!clusters.isEmpty()) {
 			LogUtil.getInstance().info("determine graph clusters  [" + function + "]");
 			Graph<ClusterNode<Node>, Edge<ClusterNode<Node>>> graCluster = GraphUtil.getInstance()
 					.createGraphForClusters(gra, clusters, null, null);
-			graCluster.setName(name + "_cluster");
+			graCluster.setName(name + "_meta_cluster");
 			LogUtil.getInstance().info("write result cluster graph to file [" + function + "]");
-			gm.writeGraphWithCycleInfo(targetdir, graCluster, tool.getNodeMarkup());
+			gm.writeGrapInfo(targetdir, graCluster, tool.getNodeMarkup());
 			result.add(targetdir + DataUtil.PATH_SEPARATOR + graCluster.getName() + ".gv.svg");
 		}
 		LogUtil.getInstance().info("determine meta graph [" + function + "]");
 		Graph<Node, Edge<Node>> graMeta = GraphUtil.getInstance().createMetaGraph(gra);
 		LogUtil.getInstance().info("write meta graph to file [" + function + "]");
-		gm.writeGraphWithCycleInfo(targetdir, graMeta, tool.getNodeMarkup());
+		graMeta.setName(gra.getName() + "_meta");
+		gm.writeGrapInfo(targetdir, graMeta, tool.getNodeMarkup());
 		result.add(targetdir + DataUtil.PATH_SEPARATOR + graMeta.getName() + ".gv.svg");
 		LogUtil.getInstance().info("perform graph conversion [" + function + "]");
 		GraphConverter graCvt = new GraphConverter();

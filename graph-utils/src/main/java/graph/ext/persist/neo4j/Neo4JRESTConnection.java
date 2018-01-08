@@ -118,11 +118,11 @@ public class Neo4JRESTConnection {
 		Graph<Node, Edge<Node>> gra = Neo4JUtil.getInstance().convertNeo4JResult2Graph(json);
 		gra.setName("neo4jresttest.1");
 		GraphMetrics metrics = new GraphMetrics();
-		metrics.writeGraphWithCycleInfo("d:/tmp/", gra, new CSVData());
+		metrics.writeGrapInfo("d:/tmp/", gra, new CSVData());
 		json = conn.cypher("match p1 = (p:ProxyService) -[*]-> (b:BusinessService)  return p1", CypherResultType.GRAPH);
 		gra = Neo4JUtil.getInstance().convertNeo4JResult2Graph(json);
 		gra.setName("neo4jresttest.2");
-		metrics.writeGraphWithCycleInfo("d:/tmp/", gra, new CSVData());
+		metrics.writeGrapInfo("d:/tmp/", gra, new CSVData());
 		return;
 	}
 }

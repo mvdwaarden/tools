@@ -1535,7 +1535,7 @@ public class SOATool extends Tool {
 					json);
 			// Write the meta model as a graph
 			Graph<Node, Edge<Node>> graMeta = GraphUtil.getInstance().createMetaGraph(graTotal);
-			metrics.writeGraphWithCycleInfo(targetdir, graMeta, getNodeMarkup(), GraphOption.CLEANUP_CYCLE_INFO);
+			metrics.writeGrapInfo(targetdir, graMeta, getNodeMarkup(), GraphOption.CLEANUP_CYCLE_INFO);
 			List<Cluster<Node>> clusters = getConventionClusters(result);
 			Graph<ClusterNode<Node>, Edge<ClusterNode<Node>>> graConventions = GraphUtil.getInstance()
 					.createGraphForClusters(graTotal, clusters, null);
@@ -1544,10 +1544,10 @@ public class SOATool extends Tool {
 			for (String name : result.keySet()) {
 				Graph<Node, Edge<Node>> gra = getGraph(result, name);
 				gra = filterGraph(function, gra);
-				metrics.writeGraphWithCycleInfo(targetdir, gra, getNodeMarkup(), GraphOption.CLEANUP_CYCLE_INFO);
+				metrics.writeGrapInfo(targetdir, gra, getNodeMarkup(), GraphOption.CLEANUP_CYCLE_INFO);
 			}
 			// Determine conventions
-			metrics.writeGraphWithCycleInfo(targetdir, getGraph(result, GRAPH_NAME_CONVENTIONS), clusters,
+			metrics.writeGraphInfo(targetdir, getGraph(result, GRAPH_NAME_CONVENTIONS), clusters,
 					getNodeMarkup(), GraphOption.CLEANUP_CYCLE_INFO);
 			CSVData conventionViolation = analyzeConventions(getGraph(result, GRAPH_NAME_CONVENTIONS), clusters);
 			CSVUtil.getInstance().writeToFile(targetdir + DataUtil.PATH_SEPARATOR + "cdm-convention-violation.csv",
@@ -2308,7 +2308,7 @@ public class SOATool extends Tool {
 							result.getCreateScript());
 					LogUtil.getInstance().info("Writing DLL graph information");
 					GraphMetrics metrics = new GraphMetrics();
-					metrics.writeGraphWithCycleInfo(targetdir, graMeta, getNodeMarkup());
+					metrics.writeGrapInfo(targetdir, graMeta, getNodeMarkup());
 					DataUtil.getInstance().writeToFile(
 							targetdir + DataUtil.PATH_SEPARATOR
 									+ DataUtil.getInstance().getFilenameWithoutExtension(file) + ".xml",
@@ -2379,7 +2379,7 @@ public class SOATool extends Tool {
 			LogUtil.getInstance().info("Writing XSD meta graph");
 			Graph<Node, Edge<Node>> gra = GraphUtil.getInstance().createMetaGraph(meta);
 
-			metrics.writeGraphWithCycleInfo(targetdir, gra, getNodeMarkup());
+			metrics.writeGrapInfo(targetdir, gra, getNodeMarkup());
 			LogUtil.getInstance().info("Writing CSV ");
 			writeMetaDataCSV(targetdir, meta);
 			LogUtil.getInstance().info("Done cleansing XSD [" + file + "]");
@@ -2388,10 +2388,10 @@ public class SOATool extends Tool {
 			graXsd.setName(DataUtil.getInstance().getFilenameWithoutExtension(file) + "_gra");
 			linker.link(graXsd, new GraphIndex<XSDNode, Edge<XSDNode>>(graXsd).build(), null);
 			graTotal.append(graXsd, GraphOption.CHECK_DUPLICATES);
-			metrics.writeGraphWithCycleInfo(targetdir, graXsd, getNodeMarkup());
+			metrics.writeGrapInfo(targetdir, graXsd, getNodeMarkup());
 		}
 		linker.link(graTotal, new GraphIndex<XSDNode, Edge<XSDNode>>(graTotal).build(), null);
-		metrics.writeGraphWithCycleInfo(targetdir, graTotal, getNodeMarkup());
+		metrics.writeGrapInfo(targetdir, graTotal, getNodeMarkup());
 	}
 
 	private void appendMetaCompositeToCSV(CSVData csv, MetaComposite composite) {
@@ -2457,7 +2457,7 @@ public class SOATool extends Tool {
 			graCompared.setName("comparison");
 			GraphMetrics metrics = new GraphMetrics();
 			LogUtil.getInstance().info("Write comparison");
-			metrics.writeGraphWithCycleInfo(targetdir, graCompared, getNodeMarkup());
+			metrics.writeGrapInfo(targetdir, graCompared, getNodeMarkup());
 		} else {
 			LogUtil.getInstance().info("Specify at least two directories for the sourcedir (using ',')");
 		}
@@ -2544,8 +2544,8 @@ public class SOATool extends Tool {
 		}
 
 		GraphMetrics metrics = new GraphMetrics();
-		metrics.writeGraphWithCycleInfo(targetdir, graMapping, clusters, getNodeMarkup());
-		metrics.writeGraphWithCycleInfo(targetdir, graMappingEnriched, clusters, getNodeMarkup());
+		metrics.writeGraphInfo(targetdir, graMapping, clusters, getNodeMarkup());
+		metrics.writeGraphInfo(targetdir, graMappingEnriched, clusters, getNodeMarkup());
 		if (EnumUtil.getInstance().contains(options, Option.CLIENT)) {
 			LogUtil.getInstance().info("Write mapping analysis to graph store (neo4j)");
 			writeGraphToNeo4J(graMappingEnriched, NEO4J_MAPPING_STORE);
