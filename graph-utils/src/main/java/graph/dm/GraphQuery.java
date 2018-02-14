@@ -60,8 +60,8 @@ public class GraphQuery<N extends Node, E extends Edge<N>> {
 	}
 
 	/**
-	 * Get a new graph query based on a node filter on the target nodes (found
-	 * on either the incoming (follow) or the outgoing (opposite) edges).
+	 * Get a new graph query based on a node filter on the target nodes (found on
+	 * either the incoming (follow) or the outgoing (opposite) edges).
 	 * 
 	 * More nodes can be found.
 	 * 
@@ -209,6 +209,7 @@ public class GraphQuery<N extends Node, E extends Edge<N>> {
 			_locals.nodePropertyMapper = (n, p) -> n.getProperty(p);
 		do {
 			Direction direction = null;
+
 			idx = path.indexOf('>', prevIdx + 1);
 			if (idx < 0)
 				idx = path.indexOf('<', prevIdx + 1);
@@ -234,7 +235,8 @@ public class GraphQuery<N extends Node, E extends Edge<N>> {
 
 			if (null != direction) {
 				String strTest = (part.equals("*")) ? ".*" : part;
-				query = query.get((e, n, d) -> n.getClass().getSimpleName().matches(strTest + "(Node)?"), direction);
+				query = query.get((e, n, d) -> ((strTest.charAt(0) == ':' && null != e.getDescription()) ? e.getDescription().matches(strTest.substring(1))
+						: n.getClass().getSimpleName().matches(strTest + "(Node)?")), direction);
 			} else {
 				String strTest = part;
 				result = query.get(n -> _locals.nodePropertyMapper.map(n, strTest), reduce);

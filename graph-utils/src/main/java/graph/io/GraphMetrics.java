@@ -153,17 +153,11 @@ public class GraphMetrics {
 				result = StringUtil.getInstance().replace(markup, var -> {
 					GraphQuery<N, E> qry = new GraphQuery<>(gidx, node);
 					Object value = qry.getByPath(var, '|');
-					return (null == value) ? "" : value.toString().replaceAll("\"", "\\\"");
+					return (null == value) ? "" : value.toString().replaceAll("\"", "");
 				});
 			else
 				result = markup;
-			if (null != result) {
-				// clean up empty groups
-				result = result.replaceAll("\\|\\|", "|");
-				result = result.replaceAll("\\|\\{[\\.\\|]?\\}", "");
-				result = result.replaceAll("\\|\\}", "\\}");
-				result = result.replaceAll("\\{\\|", "\\{");
-			}
+			
 			return result;
 		}
 

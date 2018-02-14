@@ -76,6 +76,17 @@ public class SimpleDottyWriter<N extends Node, E extends Edge<N>> {
 		return result;
 	}
 
+	boolean excludeEdge(E edge, String[] nodeExclusions) {
+		boolean result = false;
+		for (String exclusion : nodeExclusions) {
+			if (exclusion.startsWith("(Edge") && edge.getName().matches(exclusion.substring("(Edge)".length()))) {
+				result = true;
+				break;
+			}
+		}
+		return result;
+	}
+
 	void writeNodes(Graph<N, E> graph, Map<N, Integer> nodeReferenceCount, StringBuilder result,
 			CustomDottyMarkupCallback<N, E> markupCallback, String[] nodeExclusions, Option... options) {
 		for (N node : graph.getNodes())
@@ -96,9 +107,19 @@ public class SimpleDottyWriter<N extends Node, E extends Edge<N>> {
 				opmaak = markupCallback.nodeMarkup(graph, node, (null != refCount) ? refCount : 0);
 			}
 			if (null != opmaak && !opmaak.isEmpty()) {
+				if (opmaak.startsWith("[")) {
+					// clean up empty groups
+					opmaak = opmaak.replace("&apos", "'");
+					opmaak = opmaak.replace("&quot", "\"");
+				}
+				opmaak = opmaak.replaceAll("\\|\"", "\"");
+				opmaak = opmaak.replaceAll("\\|\"", "\"");
+				opmaak = opmaak.replaceAll("\\|\\|", "|");
+				opmaak = opmaak.replaceAll("\\|\\{[\\.\\|]?\\}", "");
+				opmaak = opmaak.replaceAll("\\|\\}", "\\}");
+				opmaak = opmaak.replaceAll("\\{\\|", "\\{");
 				if (opmaak.startsWith("["))
-					pad(result, 1).append(toValidNodeName(getName(node)) + " "
-							+ opmaak.replace("&apos", "'").replace("&quot", "\"") + ";\n");
+					pad(result, 1).append(toValidNodeName(getName(node)) + " " + opmaak + ";\n");
 				else
 					pad(result, 1).append(toValidNodeName(getName(node)) + " [label=\""
 							+ toValidDescription(getDescription(node)) + "\", " + opmaak + "];\n");
@@ -112,7 +133,8 @@ public class SimpleDottyWriter<N extends Node, E extends Edge<N>> {
 	void writeEdges(Graph<N, E> graph, Map<N, Integer> nodeReferenceCount, StringBuilder result,
 			CustomDottyMarkupCallback<N, E> markupCallback, String[] nodeExclusion, Option... options) {
 		for (E edge : graph.getEdges()) {
-			if (!excludeNode(edge.getSource(), nodeExclusion) && !excludeNode(edge.getTarget(), nodeExclusion)) {
+			if (!excludeNode(edge.getSource(), nodeExclusion) && !excludeNode(edge.getTarget(), nodeExclusion)
+					&& !excludeEdge(edge, nodeExclusion)) {
 				pad(result, 1).append(toValidNodeName(getName(edge.getSource())));
 				result.append(" -> ");
 				result.append(toValidNodeName(getName(edge.getTarget())));

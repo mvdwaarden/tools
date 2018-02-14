@@ -33,6 +33,7 @@ import data.DataUtil;
 import data.EnumUtil;
 import data.LogUtil;
 import data.StringUtil;
+import graph.GraphConst;
 import graph.GraphOption;
 import graph.dm.Cluster;
 import graph.dm.ClusterNode;
@@ -64,7 +65,11 @@ import graph.link.GraphLinker;
 import graph.util.GraphUtil;
 import jee.thread.ManagedThread;
 import jee.thread.ThreadUtil;
+import json.JSONList;
+import json.JSONObject;
+import json.JSONRecord;
 import json.JSONUtil;
+import json.JSONValue;
 import metadata.MetaComposite;
 import metadata.MetaData;
 import metadata.MetaElement;
@@ -194,6 +199,7 @@ public class SOATool extends Tool {
 	public static final String FUNCTION_CSV_RULE_EXECUTE = "csvruleexec";
 	public static final String FUNCTION_LIST_CONFIGURATIONS = "list";
 	public static final String FUNCTION_ORACLE_ANALYSIS = "orcl";
+	public static final String FUNCTION_TRIPLES_TO_GV = "t2gv";
 	public static final String FUNCTION_HEX_CLEAN = "hexclean";
 	public static final String FUNCTION_SLOW_SERVER = "slow";
 	public static final String FUNCTION_JMS_SERVER = "jms";
@@ -1106,7 +1112,9 @@ public class SOATool extends Tool {
 
 		if (null == function || function.isEmpty())
 			function = FUNCTION_ORACLE_ANALYSIS;
-		if (function.equals(FUNCTION_HEX_CLEAN)) {
+		if (function.equals(FUNCTION_TRIPLES_TO_GV)) {
+			triplesToGv(function, sourcedir, targetdir, sourcefile, options);
+		} else if (function.equals(FUNCTION_HEX_CLEAN)) {
 			hexClean(function, sourcedir, targetdir, sourcefile, options);
 		} else if (function.equals(FUNCTION_SOAP_ANALYSIS)) {
 			analyzeSOAPMessages(function, sourcedir, targetdir, options);
@@ -1171,13 +1179,123 @@ public class SOATool extends Tool {
 		} else if (function.equals(FUNCTION_SOA_TOOL_SRV)) {
 			executeSOAToolSrv(args);
 		}
-		
+
 	}
-	private void executeSubdirectoryGraphConversions(String targetdir,boolean autoconvert) {
+
+	public void triplesToGv(String function, String sourcedir, String targetdir, String sourcefile, Option[] options) {
+		class Locals {
+			int literialId;
+		}
+		Locals _locals = new Locals();
+
+		forEachDir(sourcedir, "(?i).*\\.ttl?", (fsg) -> {
+			for (FileSystemNode fsn : fsg.filterNodes(f -> f instanceof FileNode)) {
+				MakeNode<Node> createNode = (str) -> {
+					Node result = new Node();
+
+					return result;
+				};
+
+				MakeNode<Node> createSourceNode = (str) -> {
+					Node result = createNode.createNode(str);
+					result.setId(StringUtil.getInstance().slice(str, "<", ">"));
+					if (result.getId().contains("/")) {
+						int idx = result.getId().lastIndexOf("/");
+
+						result.setDescription(result.getId().substring(idx + 1));
+					}
+
+					return result;
+				};
+				MakeNode<Node> createTargetNode = (str) -> {
+					Node result = createNode.createNode(str);
+
+					if (str.contains("^^")) {
+						result.setId("http://soatool.literal.id/" + Integer.toString(_locals.literialId++));
+						int idx = str.indexOf("^^");
+
+						result.setDescription(str.substring(0, idx));
+
+					} else {
+						result.setId(StringUtil.getInstance().slice(str, "<", ">"));
+						if (result.getId().contains("/")) {
+							int idx = result.getId().lastIndexOf("/");
+
+							result.setDescription(result.getId().substring(idx + 1));
+						}
+					}
+					return result;
+				};
+
+				MakeEdge<Node, Edge<Node>> createEdge = (str) -> {
+					Edge<Node> result = new Edge<Node>();
+					result.setName(StringUtil.getInstance().slice(str, "<", ">"));
+
+					if (result.getName().contains("/")) {
+						int idx = result.getName().lastIndexOf("/");
+
+						result.setDescription(result.getName().substring(idx + 1));
+					}
+
+					return result;
+				};
+				FileNode fn = (FileNode) fsn;
+
+				String content = DataUtil.getInstance().readFromFile(fn.getId());
+
+				TripleParser parser = new TripleParser();
+
+				JSONList recordList = parser.parse(content);
+
+				String json = JSONUtil.getInstance().writeJSON(recordList);
+				DataUtil.getInstance().writeToFile(fn.getId() + ".json", json);
+
+				Graph<Node, Edge<Node>> triples = new Graph<Node, Edge<Node>>();
+				triples.setName("triples");
+				for (JSONObject jsonObject : recordList.getData()) {
+					JSONRecord rec = (JSONRecord) jsonObject;
+
+					JSONList list = (JSONList) rec.getData().get(TripleParser.TRIPLES);
+
+					for (JSONObject str : list.getData()) {
+						String[] triple = ((JSONValue<String>) str).getData().split(",");
+
+						if (triple.length >= 3) {
+							Edge<Node> edge = createEdge.createEdge(triple[1]);
+
+							Node src = createSourceNode.createNode(triple[0]);
+							Node target = createTargetNode.createNode(triple[2]);
+
+							edge.setSource(src);
+							edge.setTarget(target);
+							triples.addEdge(edge, GraphOption.CHECK_DUPLICATES);
+
+						}
+					}
+				}
+				GraphMetrics metric = new GraphMetrics();
+				CSVData csvdata = new CSVData();
+				csvdata.setHeader(new String[] { GraphConst.CONFIG_COLUMN_CLASS, GraphConst.CONFIG_COLUMN_MARKUP, });
+				csvdata.add(new String[] { Node.class.getName(),
+						"[shape=Mrecord,label=&quot${description}|${>:22-rdf-syntax-ns#type.description}&quot]"
+
+				});
+				metric.writeGraphInfo(targetdir, triples, null, csvdata,
+						new String[] { "(Edge)http://www.w3.org/1999/02/22-rdf-syntax-ns#type" });
+				executeSubdirectoryGraphConversions(targetdir, false);
+				json.length();
+			}
+			return true;
+		});
+
+	}
+
+	private void executeSubdirectoryGraphConversions(String targetdir, boolean autoconvert) {
 		LogUtil.getInstance().info("Execute subdirectory graph conversions");
 		GraphConverter cvt = new GraphConverter();
 		cvt.convertGV2GML_PNG_SVG(targetdir, autoconvert);
 	}
+
 	private void executeSOAToolSrv(String[] args) {
 		String endpoint = StringUtil.getInstance().getArgument(args, "ep");
 		String configuration = StringUtil.getInstance().getArgument(args, "conf");
@@ -1547,8 +1665,8 @@ public class SOATool extends Tool {
 				metrics.writeGrapInfo(targetdir, gra, getNodeMarkup(), GraphOption.CLEANUP_CYCLE_INFO);
 			}
 			// Determine conventions
-			metrics.writeGraphInfo(targetdir, getGraph(result, GRAPH_NAME_CONVENTIONS), clusters,
-					getNodeMarkup(), GraphOption.CLEANUP_CYCLE_INFO);
+			metrics.writeGraphInfo(targetdir, getGraph(result, GRAPH_NAME_CONVENTIONS), clusters, getNodeMarkup(),
+					GraphOption.CLEANUP_CYCLE_INFO);
 			CSVData conventionViolation = analyzeConventions(getGraph(result, GRAPH_NAME_CONVENTIONS), clusters);
 			CSVUtil.getInstance().writeToFile(targetdir + DataUtil.PATH_SEPARATOR + "cdm-convention-violation.csv",
 					conventionViolation, ';');
@@ -3012,5 +3130,119 @@ public class SOATool extends Tool {
 
 			return result;
 		}
+	}
+
+	enum TripleParserState {
+		RESOURCE("Resource("), ID("id :"), TRIPLES("triples :"), TRIPLE_BEGIN("("), TRIPLE_END(")");
+		private String token;
+
+		TripleParserState(String token) {
+			this.token = token;
+		}
+
+		public String getToken() {
+			return token;
+		}
+
+	};
+
+	interface MakeNode<N extends Node> {
+		N createNode(String str);
+	};
+
+	interface MakeEdge<N extends Node, E extends Edge<N>> {
+		E createEdge(String str);
+	};
+
+	interface TrippleParserAdd {
+		public void add(String part, String id);
+	};
+
+	class TripleParser {
+		public static final String ID = "id";
+		public static final String TRIPLES = "triples";
+
+		public TripleParser() {
+
+		}
+
+		public JSONList parse(String content) {
+			JSONList result = new JSONList();
+
+			// RESOURCE -> ID -> TRIPLES
+			parse(content, new TripleParserState[] { TripleParserState.RESOURCE, TripleParserState.ID,
+					TripleParserState.TRIPLES }, result);
+
+			return result;
+		}
+
+		public JSONList parse(String content, TripleParserState[] tokens, JSONList jsonList) {
+			int tokenIdx = 0;
+			TripleParserState nextToken = tokens[0];
+			TripleParserState previousToken = null;
+			int previousTokenContentIdx = 0;
+			String id = null;
+
+			TrippleParserAdd resource = (chunk, resourceId) -> {
+				resourceId = StringUtil.getInstance().slice(resourceId, "<", ">");
+				JSONRecord jsonRecord = new JSONRecord();
+				JSONList nestedJsonList = new JSONList();
+				parse(chunk, new TripleParserState[] { TripleParserState.TRIPLE_BEGIN, TripleParserState.TRIPLE_END },
+						nestedJsonList);
+				jsonRecord.getData().put(ID, new JSONValue<String>(resourceId));
+				jsonRecord.getData().put(TRIPLES, nestedJsonList);
+				jsonList.getData().add(jsonRecord);
+			};
+
+			TrippleParserAdd triple = (chunk, resourceId) -> {
+				if (chunk.contains("<"))
+					jsonList.getData().add(new JSONValue<String>(chunk));
+			};
+
+			do {
+				int nextTokenContentIdx = content.indexOf(nextToken.getToken(), previousTokenContentIdx);
+				if (nextTokenContentIdx >= 0) {
+					String chunk = getChunk(content, previousTokenContentIdx, nextTokenContentIdx);
+					previousTokenContentIdx = nextTokenContentIdx + nextToken.getToken().length();
+					if (null != previousToken) {
+						switch (previousToken) {
+						case RESOURCE:
+							break;
+						case ID:
+							id = chunk;
+							break;
+						case TRIPLES:
+							resource.add(chunk, id);
+							break;
+						case TRIPLE_BEGIN:
+							triple.add(chunk, id);
+							break;
+						case TRIPLE_END:
+
+							break;
+						}
+					}
+					previousToken = nextToken;
+					nextToken = tokens[++tokenIdx % tokens.length];
+				} else {
+					nextToken = null;
+				}
+			} while (null != nextToken);
+			if (previousToken == TripleParserState.TRIPLES) {
+				resource.add(getChunk(content, previousTokenContentIdx), id);
+			} else if (previousToken == TripleParserState.TRIPLE_END) {
+				triple.add(getChunk(content, previousTokenContentIdx), id);
+			}
+			return jsonList;
+		}
+
+		private String getChunk(String content, int startIdx) {
+			return getChunk(content, startIdx, -1);
+		}
+
+		private String getChunk(String content, int startIdx, int endIdx) {
+			return (endIdx >= startIdx) ? content.substring(startIdx, endIdx) : content.substring(startIdx);
+		}
+
 	}
 }

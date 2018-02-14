@@ -86,8 +86,8 @@ public class StringUtil implements Util {
 					++i;
 				} else {
 					part += separator;
-					i += separator.length();					
-				}				
+					i += separator.length();
+				}
 			} else if (i + begin.length() < lineLength && line.substring(i, i + begin.length()).equals(begin)) {
 				part += begin;
 				++depth;
@@ -552,8 +552,8 @@ public class StringUtil implements Util {
 	}
 
 	/**
-	 * Replaces strings inside an inner block in a string. The block is defined
-	 * by a blockStart AND a blockEnd. Only replacements in the inner block are
+	 * Replaces strings inside an inner block in a string. The block is defined by a
+	 * blockStart AND a blockEnd. Only replacements in the inner block are
 	 * performed.
 	 * 
 	 * <pre>
@@ -842,8 +842,8 @@ public class StringUtil implements Util {
 	}
 
 	/**
-	 * Perform a replacement on a string using regular expressions. The
-	 * replacement stops when the first replacement pair changes the string.
+	 * Perform a replacement on a string using regular expressions. The replacement
+	 * stops when the first replacement pair changes the string.
 	 * 
 	 * Example: replace("([^\\.]*)\\.([^\\.]*)$,$2") returns the filename
 	 * 
@@ -893,4 +893,29 @@ public class StringUtil implements Util {
 
 		return result;
 	}
+
+	/**
+	 * Slices a string with a start and end string. The result is everything in
+	 * between
+	 * 
+	 * @param str
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public String slice(String str, String start, String end) {
+		String result = str;
+		int tmpIdx = result.indexOf(start);
+
+		if (tmpIdx >= 0)
+			result = result.substring(tmpIdx + start.length());
+
+		tmpIdx = result.lastIndexOf(end);
+
+		if (tmpIdx >= 0)
+			result = result.substring(0, tmpIdx);
+
+		return result;
+	}
+
 }
