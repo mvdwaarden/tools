@@ -270,8 +270,8 @@ public class DataUtil implements Util {
 	 * @param charset
 	 */
 	public void writeToFile(String filename, String data, String charset) {
-		
-		try (BufferedOutputStream of = new BufferedOutputStream(new FileOutputStream(filename))){	
+
+		try (BufferedOutputStream of = new BufferedOutputStream(new FileOutputStream(filename))) {
 			if (null == charset)
 				of.write(data.getBytes());
 			else
@@ -346,8 +346,12 @@ public class DataUtil implements Util {
 		String result = "";
 		String protocol = "";
 		String drive = "";
+		boolean absolute = false;
 
 		String tmpFolder = folder.replace('\\', '/');
+		// check if this is an absolute path
+		if (folder.length() > 0 && folder.charAt(0) == '/') 
+			absolute = true;
 		// check if the path contains a protocol specification
 		int idx = tmpFolder.indexOf("//");
 		if (idx >= 1 && tmpFolder.charAt(idx - 1) == ':') {
@@ -367,7 +371,7 @@ public class DataUtil implements Util {
 				tmpFolder = "";
 		} else
 			drive = "";
-		// check if we have something left
+		// check if we have something left, after path specification
 		if (!tmpFolder.isEmpty()) {
 			String[] path = tmpFolder.split("/");
 			Stack<String> corrected = new Stack<>();
@@ -381,7 +385,8 @@ public class DataUtil implements Util {
 
 			}
 			if (!corrected.isEmpty()) {
-				result = makePath(protocol, drive);
+				//rebuild path
+				result = makePath(protocol, drive,absolute);
 
 				for (String el : corrected) {
 					result += el + "/";
@@ -390,13 +395,13 @@ public class DataUtil implements Util {
 					result = result.substring(0, result.length() - 1);
 			}
 		} else {
-			result = makePath(protocol, drive);
+			result = makePath(protocol, drive,absolute);
 		}
 
 		return result;
 	}
 
-	private String makePath(String protocol, String drive) {
+	private String makePath(String protocol, String drive,boolean absolute) {
 		String result = "";
 		if (!protocol.isEmpty()) {
 			result += protocol;
@@ -406,7 +411,9 @@ public class DataUtil implements Util {
 			result += drive;
 			result += ":";
 			result += "/";
-		}
+		} 
+		if (result.isEmpty() && absolute)
+			result += "/";
 		return result;
 	}
 
@@ -486,14 +493,10 @@ public class DataUtil implements Util {
 	/**
 	 * Pas the content of an input stream to a callback, line by line
 	 * 
-	 * @param is
-	 *            input stream
-	 * @param stream
-	 *            name
-	 * @param begin
-	 *            //comment begin
-	 * @param end
-	 *            //comment end
+	 * @param is       input stream
+	 * @param stream   name
+	 * @param begin    //comment begin
+	 * @param end      //comment end
 	 * @param callback
 	 */
 	public void readLinesFromFile(InputStream is, String streamname, String begin, String end,
@@ -505,10 +508,8 @@ public class DataUtil implements Util {
 	 * Wrapper with default encoding
 	 * 
 	 * @param filename
-	 * @param begin
-	 *            //comment begin
-	 * @param end
-	 *            //comment end
+	 * @param begin    //comment begin
+	 * @param end      //comment end
 	 * 
 	 * @param callback
 	 */
@@ -520,10 +521,8 @@ public class DataUtil implements Util {
 	 * Pas the content of a file to a callback, line by line
 	 * 
 	 * @param filename
-	 * @param begin
-	 *            //comment begin
-	 * @param end
-	 *            //comment end
+	 * @param begin    //comment begin
+	 * @param end      //comment end
 	 * @encoding
 	 * 
 	 * @param callback
@@ -540,14 +539,10 @@ public class DataUtil implements Util {
 	/**
 	 * Pas the content of an input stream to a callback, line by line
 	 * 
-	 * @param is
-	 *            input stream
-	 * @param stream
-	 *            name
-	 * @param begin
-	 *            //comment begin
-	 * @param end
-	 *            //comment end
+	 * @param is     input stream
+	 * @param stream name
+	 * @param begin  //comment begin
+	 * @param end    //comment end
 	 * @encoding
 	 * 
 	 * @param callback
@@ -604,10 +599,8 @@ public class DataUtil implements Util {
 	 * entry)
 	 * 
 	 * @param filename
-	 * @param begin
-	 *            //comment begin
-	 * @param end
-	 *            //comment end
+	 * @param begin    //comment begin
+	 * @param end      //comment end
 	 * @return
 	 */
 	public List<String> readLinesFromFile(String filename, String begin, String end) {
@@ -689,7 +682,6 @@ public class DataUtil implements Util {
 			}
 		}
 	}
-	
 
 	/**
 	 * Close a reader
@@ -706,7 +698,6 @@ public class DataUtil implements Util {
 			}
 		}
 	}
-
 
 	public void close(InputStream ips) {
 		close(ips, "unknown");
@@ -774,11 +765,7 @@ public class DataUtil implements Util {
 	public String getCurrentWorkingdir() {
 		String result = null;
 
-		try {
-			result = new File(".").getCanonicalPath();
-		} catch (IOException e) {
-			LogUtil.getInstance().warning("could not get current working directory", e);
-		}
+		result = new File(".").getAbsolutePath();
 
 		return result;
 	}
